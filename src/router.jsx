@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { ContentHome } from './pages/ContentHome';
-import { ContentGames } from './pages/ContentGames';
-import { ContentLogin } from './pages/ContentLogin';
-import { ContentRegister } from './pages/ContentRegister';
+import ContentHome from './pages/ContentHome';
+import ContentGames from './pages/ContentGames';
+import ContentLogin from './pages/ContentLogin';
+import ContentRegister from './pages/ContentRegister';
 
 import Navsbar from './navbar/Navsbar.jsx';
 

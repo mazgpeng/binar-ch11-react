@@ -1,11 +1,12 @@
-import {Text} from "@nextui-org/react";
+import { Text } from "@nextui-org/react";
 
-export const ContentRegister = () => (
-
+export default function ContentRegister() {
+    return (
         <>
             <Text h2>
                 Page Register
             </Text>
         </>
 
-    );
+    )
+}

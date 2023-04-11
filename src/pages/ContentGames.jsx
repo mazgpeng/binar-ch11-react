@@ -1,7 +1,8 @@
 import { Text, Spacer } from "@nextui-org/react"
 import { Box } from "./nextui/Box"
 
-export const ContentGames = () => (
+export default function ContentGames() {
+  return (
   <Box css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}}>
     <Text h2>Page Games</Text>
     <Text size="$lg" color="black">
@@ -75,4 +76,5 @@ export const ContentGames = () => (
     </Text>
     <Spacer y={1} />
   </Box>
-);
+)
+  }

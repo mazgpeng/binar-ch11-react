@@ -1,6 +1,7 @@
-import {Text} from "@nextui-org/react";
+import { Text } from "@nextui-org/react";
 
-export const ContentLogin = () => (
+export default function ContentLogin() {
+    return (
 
         <>
             <Text h2>
@@ -8,4 +9,5 @@ export const ContentLogin = () => (
             </Text>
         </>
 
-    );
+    )
+}
