@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
-import ContentHome from './pages/ContentHome';
+import ContentLandingPage from './pages/ContentLandingPage';
+import {ContentHome} from './pages/ContentHome';
 import ContentGames from './pages/ContentGames';
 import ContentLogin from './pages/ContentLogin';
 import ContentRegister from './pages/ContentRegister';
@@ -11,6 +12,11 @@ const Router = createBrowserRouter([
     {
         element: <Navsbar />,
         children: [
+            {
+                path: '/',
+                element: <ContentLandingPage />
+
+            },
             {
                 path: '/home',
                 element: <ContentHome />
