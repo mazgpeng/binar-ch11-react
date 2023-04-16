@@ -5,6 +5,7 @@ import { ContentLogin } from './pages/ContentLogin';
 import { ContentRegister } from './pages/ContentRegister';
 
 import Navsbar from './navbar/Navsbar.jsx';
+import { ContentProfile } from './pages/ContentProfile';
 
 const Router = createBrowserRouter([
 
@@ -29,9 +30,11 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <ContentRegister />
-
             },
-
+            {
+                path: '/profile',
+                element: <ContentProfile />
+            },
         ]
     }
 ])
