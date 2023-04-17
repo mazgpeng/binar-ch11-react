@@ -1,6 +1,5 @@
 import { Input, Button } from "reactstrap";
 import { useState } from "react";
-import Navsbar from "../navbar/Navsbar.jsx";
 import Footer from "../components/Footer.js";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 import app from '../service/firebase'
@@ -30,7 +29,6 @@ export const ContentRegister = () => {
 
     return (
     <div className="latar">
-        <Navsbar />
             <div className="container">
             <div>
                 <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />

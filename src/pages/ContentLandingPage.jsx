@@ -1,13 +1,11 @@
 import { Text, Container, Row, Button, Spacer, Card, } from "@nextui-org/react";
 import { Box } from "./nextui/Box"
-import Navsbar from "../navbar/Navsbar.jsx";
 import background from '../img/background.jpeg'
 import background1 from '../img/background1.jpg'
 
 export default function ContentLandingPage() {
   return (
     <>
-      <Navsbar />
       <Container xl css={{
         backgroundImage: `url(${background})`,
         fontSize: '50px',

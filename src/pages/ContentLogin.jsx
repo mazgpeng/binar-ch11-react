@@ -1,6 +1,5 @@
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
-import Navsbar from "../navbar/Navsbar.jsx";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
 import { useNavigate } from "react-router";
@@ -50,7 +49,6 @@ export const ContentLogin = () => {
 
     return (
     <div className="latar">
-        <Navsbar />
             <div className="container">
                 <div>
                     <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />

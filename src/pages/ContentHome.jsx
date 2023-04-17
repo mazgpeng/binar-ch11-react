@@ -1,7 +1,6 @@
 import { useState } from "react";
 import suit from "../img/suit.jpg";
 import Footer from "../components/Footer.js";
-import Navsbar from "../navbar/Navsbar.jsx";
 import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +10,6 @@ export function ContentHome() {
 
   return (
     <div className="latar">
-      <Navsbar />
         <div className="container">
         <div className="container home-content rounded p-3 shadow">
           <h4 className="home-left text-light">Hi,Welcome {user.username}</h4>
