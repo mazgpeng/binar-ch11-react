@@ -1,5 +1,7 @@
 import { Input, Button } from "reactstrap";
 import { useState } from "react";
+import Navsbar from "../navbar/Navsbar.jsx";
+import Footer from "../components/Footer.js";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 import app from '../service/firebase'
 const provider = new GoogleAuthProvider();
@@ -27,15 +29,21 @@ export const ContentRegister = () => {
     }
 
     return (
-        <div>
-            <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
-            <br />
-            <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
-            <br />
-            <button
-                className="btn btn-success"
-                onClick={handleSignUp}
-            >Sign Up</button>
-        </div>
+    <div className="latar">
+        <Navsbar />
+            <div className="container">
+            <div>
+                <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
+                <br />
+                <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
+                <br />
+                <button
+                    className="btn btn-success"
+                    onClick={handleSignUp}
+                >Sign Up</button>
+            </div>
+            </div>
+        <Footer />
+    </div>
     )
 }
