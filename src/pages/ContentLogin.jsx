@@ -1,4 +1,3 @@
-import { Text } from "@nextui-org/react";
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import Navsbar from "../navbar/Navsbar.jsx";

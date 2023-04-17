@@ -1,11 +1,13 @@
-import { Text, Container, Row, Button, Spacer,Card,} from "@nextui-org/react";
+import { Text, Container, Row, Button, Spacer, Card, } from "@nextui-org/react";
 import { Box } from "./nextui/Box"
+import Navsbar from "../navbar/Navsbar.jsx";
 import background from '../img/background.jpeg'
 import background1 from '../img/background1.jpg'
 
 export default function ContentLandingPage() {
   return (
     <>
+      <Navsbar />
       <Container xl css={{
         backgroundImage: `url(${background})`,
         fontSize: '50px',
@@ -84,7 +86,7 @@ export default function ContentLandingPage() {
       </Container>
 
       <Container xl css={{
-        backgroundColor : 'gray',
+        backgroundColor: 'gray',
         fontSize: '50px',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -93,18 +95,17 @@ export default function ContentLandingPage() {
       }}>
         <Row justify="center" align="center">
           <Box css={{ px: "$12", mt: "$20", mb: "$20", "@xsMax": { px: "$10" } }}>
-          <Card css={{ $$cardColor: 'black'}}>
-            <Card.Body>
-              <Text  h6 size={30} color="white" css={{ m: 0 }}>
-                Email : GameStation@game.station.com
-              </Text>
-            </Card.Body>
-          </Card>
+            <Card css={{ $$cardColor: 'black' }}>
+              <Card.Body>
+                <Text h6 size={30} color="white" css={{ m: 0 }}>
+                  Email : GameStation@game.station.com
+                </Text>
+              </Card.Body>
+            </Card>
           </Box>
-     
+
         </Row>
       </Container>
-
     </>
 
   )
