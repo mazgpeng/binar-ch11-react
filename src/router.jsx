@@ -4,6 +4,7 @@ import {ContentHome} from './pages/ContentHome';
 import ContentGames from './pages/ContentGames';
 import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
+import {ContentLeaderboard} from './pages/ContentLeaderboard'
 
 
 import { ContentProfile } from './pages/ContentProfile';
@@ -39,6 +40,10 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <ContentProfile />
+            },
+            {
+                path: '/leaderboard',
+                element: <ContentLeaderboard />
             },
         ]
     }
