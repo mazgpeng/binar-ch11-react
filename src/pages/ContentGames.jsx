@@ -1,5 +1,7 @@
 import { Text, Spacer } from "@nextui-org/react"
 import { Box } from "./nextui/Box"
+import Footer from "../components/Footer.js";
+import Navsbar from "../navbar/Navsbar.jsx";
 
 export default function ContentGames() {
   return (
