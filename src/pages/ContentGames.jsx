@@ -5,6 +5,8 @@ import Navsbar from "../navbar/Navsbar.jsx";
 
 export default function ContentGames() {
   return (
+    <>
+    <Navsbar/>
   <Box css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}}>
     <Text h2>Page Games</Text>
     <Text size="$lg" color="black">
@@ -78,5 +80,6 @@ export default function ContentGames() {
     </Text>
     <Spacer y={1} />
   </Box>
-)
-  }
+  </>
+  )
+}

@@ -2,8 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 import ContentLandingPage from './pages/ContentLandingPage';
 import {ContentHome} from './pages/ContentHome';
 import ContentGames from './pages/ContentGames';
-import ContentLogin from './pages/ContentLogin';
-import ContentRegister from './pages/ContentRegister';
+import {ContentLogin} from './pages/ContentLogin';
+import {ContentRegister} from './pages/ContentRegister';
 
 
 import { ContentProfile } from './pages/ContentProfile';
@@ -14,7 +14,7 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <ContentLandingPage />
+                element: <ContentLandingPage/>
 
             },
             {
