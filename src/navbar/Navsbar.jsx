@@ -13,7 +13,7 @@ export default function Navsbar() {
                 <Navbar.Brand>
                     <AcmeLogo />
                     <Text b color="inherit" hideIn="xs">
-                        ACME
+                        GameStation™
                     </Text>
                 </Navbar.Brand>
 

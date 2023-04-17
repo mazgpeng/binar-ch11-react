@@ -1,4 +1,4 @@
-import { Text, Container, Row, Button, Spacer, Image, Card, Col } from "@nextui-org/react";
+import { Text, Container, Row, Button, Spacer,Card,} from "@nextui-org/react";
 import { Box } from "./nextui/Box"
 import background from '../img/background.jpeg'
 import background1 from '../img/background1.jpg'
@@ -92,10 +92,10 @@ export default function ContentLandingPage() {
         height: '1000'
       }}>
         <Row justify="center" align="center">
-          <Box css={{ px: "$12", mt: "$20", mb: "$20", pl: "$15", "@xsMax": { px: "$10" } }}>
+          <Box css={{ px: "$12", mt: "$20", mb: "$20", "@xsMax": { px: "$10" } }}>
           <Card css={{ $$cardColor: 'black'}}>
             <Card.Body>
-              <Text justify="center" align="center" h6 size={40} color="white" css={{ m: 0 }}>
+              <Text  h6 size={30} color="white" css={{ m: 0 }}>
                 Email : GameStation@game.station.com
               </Text>
             </Card.Body>
