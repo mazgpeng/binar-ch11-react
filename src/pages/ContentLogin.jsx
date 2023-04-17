@@ -1,6 +1,8 @@
 import { Text } from "@nextui-org/react";
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
+import Navsbar from "../navbar/Navsbar.jsx";
+import Footer from "../components/Footer.js";
 import app from '../service/firebase'
 import { useNavigate } from "react-router";
 const auth = getAuth(app)
@@ -48,19 +50,25 @@ export const ContentLogin = () => {
     }
 
     return (
-        <div>
-            <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
-            <br />
-            <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
-            <br />
-            <button
-                className="btn btn-success"
-                onClick={handleLogin}
-            >Login</button>
-            <button
-                onClick={loginWithGoogle}
-            >Login With Google</button>
-            <p>{error}</p>
-        </div>
+    <div className="latar">
+        <Navsbar />
+            <div className="container">
+                <div>
+                    <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
+                    <br />
+                    <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
+                    <br />
+                    <button
+                        className="btn btn-success"
+                        onClick={handleLogin}
+                    >Login</button>
+                    <button
+                        onClick={loginWithGoogle}
+                    >Login With Google</button>
+                    <p>{error}</p>
+                </div>
+            </div>
+      <Footer />
+    </div>
     )
 };
