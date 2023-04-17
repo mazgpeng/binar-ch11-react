@@ -76,11 +76,33 @@ export default function ContentLandingPage() {
           <Row gap={1.3} justify="center" align="center">
             <Text css={{
               textGradient: "45deg, $yellow600 -20%, $red600 50%",
-            }} size={50} > Featured Games</Text>
+            }} size={50} > Contact Us</Text>
             <Spacer y={1} />
 
           </Row>
         </Box>
+      </Container>
+
+      <Container xl css={{
+        backgroundColor : 'gray',
+        fontSize: '50px',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '1000'
+      }}>
+        <Row justify="center" align="center">
+          <Box css={{ px: "$12", mt: "$20", mb: "$20", pl: "$15", "@xsMax": { px: "$10" } }}>
+          <Card css={{ $$cardColor: 'black'}}>
+            <Card.Body>
+              <Text justify="center" align="center" h6 size={40} color="white" css={{ m: 0 }}>
+                Email : GameStation@game.station.com
+              </Text>
+            </Card.Body>
+          </Card>
+          </Box>
+     
+        </Row>
       </Container>
 
     </>
