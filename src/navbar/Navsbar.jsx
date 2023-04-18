@@ -41,6 +41,11 @@ export default function Navsbar() {
                            Welcome Back User! 
                        </Text>
                    </Navbar.Item>
+                   <Navbar.Item>
+                   <Button shadow color="error" auto>
+                            Log Out
+                        </Button>
+                        </Navbar.Item>
 
                </Navbar.Content>
 

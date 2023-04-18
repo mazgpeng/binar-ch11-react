@@ -52,14 +52,14 @@ export function ContentHome() {
       <Footer />
     </div>
     :
-    <Container s css={{ mt: "$40" }} >
+    <Container xs css={{ mt: "$40" }} >
       <Row justify="center" align="center">
         <Col justify="center" align="center">
           <Card css={{ $$cardColor: 'white' }}>
             <Card.Body>
               <Text justify="center" align="center" h1>Please Login To View Page!</Text>
               <Spacer y={0.5} />
-              <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto>
+              <Button xs css={{ mb: "$10" }} shadow bordered color="gradient" auto>
                 Login
               </Button>
             </Card.Body>

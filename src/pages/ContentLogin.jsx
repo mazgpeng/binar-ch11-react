@@ -53,7 +53,7 @@ export const ContentLogin = () => {
                 <div>
                     <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
                     <br />
-                    <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
+                    <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
                     <br />
                     <button
                         className="btn btn-success"
