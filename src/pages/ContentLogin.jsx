@@ -63,6 +63,12 @@ export const ContentLogin = () => {
                         onClick={loginWithGoogle}
                     >Login With Google</button>
                     <p>{error}</p>
+                    <h3>Don't Have Account?</h3>
+                    <button
+                        className="btn btn-success"
+                        onClick={() => navigate("/register")}
+                    >Register</button>
+                   
                 </div>
             </div>
       <Footer />

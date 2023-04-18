@@ -1,14 +1,25 @@
-import { useState } from "react";
+import React,{ useState,useEffect } from "react";
 import suit from "../img/suit.jpg";
 import Footer from "../components/Footer.js";
+import { Text, Container, Row, Button, Spacer, Card, Col } from "@nextui-org/react";
 import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
 
 export function ContentHome() {
   const [user, setUser] = useState({});
+  const [isLogin, setisLogin] = useState(false)
   const navigate = useNavigate();
 
+  useEffect(() => {
+      let token = localStorage.getItem('token')
+      if (token) {
+          setisLogin(true)
+      }
+  }, [])
+
   return (
+    <>
+    {isLogin ?
     <div className="latar">
         <div className="container">
         <div className="container home-content rounded p-3 shadow">
@@ -40,5 +51,24 @@ export function ContentHome() {
       </div>
       <Footer />
     </div>
+    :
+    <Container s css={{ mt: "$40" }} >
+      <Row justify="center" align="center">
+        <Col justify="center" align="center">
+          <Card css={{ $$cardColor: 'white' }}>
+            <Card.Body>
+              <Text justify="center" align="center" h1>Please Login To View Page!</Text>
+              <Spacer y={0.5} />
+              <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto>
+                Login
+              </Button>
+            </Card.Body>
+          </Card>
+          </Col>
+      </Row>
+    </Container>
+    }
+    </>
+    
   );
 }
