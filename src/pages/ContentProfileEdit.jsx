@@ -1,12 +1,11 @@
 import { Text, Container, Card, Row, Spacer, Col, Button, Input } from "@nextui-org/react"
 import React, { useEffect, useState } from "react";
-import { getAuth } from "firebase/auth"
+import { getAuth,updateProfile } from "firebase/auth"
 import app from '../service/firebase'
 
 
 export const ContentProfileEdit = () => {
     const auth = getAuth(app)
-    const [users, setUsers] = useState();
     const [isLogin, setisLogin] = useState(false)
 
     useEffect(() => {
@@ -16,13 +15,20 @@ export const ContentProfileEdit = () => {
         }
     }, [])
 
+    // const [users, setUsers] = useState();
 
-    useEffect(() => {
-        let users = auth.currentUser;
-        if (users) {
-            setUsers(users)
-        }
-    }, [])
+    function updatedata () {
+        updateProfile(auth.currentUser, {
+            displayName: "Raynato Fontana",
+          }).then(() => {
+            console.log('profile updated');
+          }).catch((error) => {
+            // An error occurred
+            // ...
+          });
+        };
+        
+
 
     return (
         <>
@@ -59,32 +65,14 @@ export const ContentProfileEdit = () => {
                             </Row>
                             <Spacer y={0.3} />
 
-                            <Row justify="center" align="center">
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Country :
-                                </Text>
-                                <Spacer y={2} />
-                                <Input placeholder="Next UI" />
 
-                            </Row>
-                            <Spacer y={0.3} />
-
-                            <Row justify="center" align="center">
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Date of Birth :
-                                </Text>
-                                <Spacer y={2} />
-                                <Input placeholder="Next UI" />
-
-                            </Row>
-                            <Spacer y={0.3} />
 
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Avatar :
                                 </Text>
                                 <Spacer y={2} />
-                                <Button color= "secondary" auto>
+                                <Button color="secondary" auto>
                                     Upload Image
                                 </Button>
                             </Row>
@@ -102,7 +90,7 @@ export const ContentProfileEdit = () => {
                         </Card.Body>
                     </Card>
                     <Row css={{ mt: "$10" }} justify="center" align="center">
-                        <Button shadow color="primary">
+                        <Button onPress={updatedata} shadow color="primary">
                             Submit
                         </Button>
                     </Row>

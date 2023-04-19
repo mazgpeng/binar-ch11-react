@@ -1,14 +1,13 @@
 import { Text, Container, Card, Row, Spacer,Col, Button } from "@nextui-org/react"
 import React, { useEffect, useState } from "react";
 import {useNavigate} from "react-router";
-import { getAuth } from "firebase/auth"
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 import app from '../service/firebase'
 
 
 export const ContentProfile = () => {
     const navigate = useNavigate()
     const auth = getAuth(app)
-    const [users, setUsers] = useState();
     const [isLogin, setisLogin] = useState(false)
 
     useEffect(() => {
@@ -18,13 +17,16 @@ export const ContentProfile = () => {
         }
     }, [])
 
+    const [users, setUsers] = useState()
 
     useEffect(() => {
-        let users = auth.currentUser;
-        if (users) {
-            setUsers(users)
-        }
-    }, [])
+        onAuthStateChanged(auth, (data) => {
+          setUsers(data)
+          console.log(data);
+        });
+      }, [])
+    
+
 
     return (
         <>
@@ -38,7 +40,8 @@ export const ContentProfile = () => {
                                 </Text>
                                 <Spacer y={2} />
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    UID
+                                {users && <p>{users.uid}</p>}
+
                                 </Text>
                             </Row>
                             <Row justify="center" align="center">
@@ -47,7 +50,7 @@ export const ContentProfile = () => {
                                 </Text>
                                 <Spacer y={2} />
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Email
+                                {users && <p>{users.email}</p>}
                                 </Text>
                             </Row>
                             <Row justify="center" align="center">
@@ -56,27 +59,10 @@ export const ContentProfile = () => {
                                 </Text>
                                 <Spacer y={2} />
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Name
+                                {users && <p>{users.displayName}</p>}
                                 </Text>
                             </Row>
-                            <Row justify="center" align="center">
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Country :
-                                </Text>
-                                <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Country
-                                </Text>
-                            </Row>
-                            <Row justify="center" align="center">
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Date of Birth :
-                                </Text>
-                                <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Date of Birth
-                                </Text>
-                            </Row>
+                           
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Avatar :

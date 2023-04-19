@@ -20,15 +20,14 @@ export function ContentHome() {
   }, [])
 
 
-const [users, setUsers] = useState()
+  const [users, setUsers] = useState()
 
-
-useEffect(() => {
-  onAuthStateChanged(auth,(data) =>{
+  useEffect(() => {
+    onAuthStateChanged(auth, (data) => {
       setUsers(data)
       console.log(data);
-  });
-}, [])
+    });
+  }, [])
 
 
 
