@@ -1,10 +1,10 @@
-import { Text, Container, Card, Row, Spacer,Col, Button } from "@nextui-org/react"
+import { Text, Container, Card, Row, Spacer, Col, Button, Input } from "@nextui-org/react"
 import React, { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth"
 import app from '../service/firebase'
 
 
-export const ContentProfile = () => {
+export const ContentProfileEdit = () => {
     const auth = getAuth(app)
     const [users, setUsers] = useState();
     const [isLogin, setisLogin] = useState(false)
@@ -35,70 +35,74 @@ export const ContentProfile = () => {
                                     UID :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    UID
-                                </Text>
+                                <Input disabled placeholder="Disabled" />
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Email :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Email
-                                </Text>
+                                <Input disabled placeholder="Disabled" />
+
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Name :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Name
-                                </Text>
+
+                                <Input placeholder="Next UI" />
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Country :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Country
-                                </Text>
+                                <Input placeholder="Next UI" />
+
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Date of Birth :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Date of Birth
-                                </Text>
+                                <Input placeholder="Next UI" />
+
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Avatar :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Avatar
-                                </Text>
+                                <Button color= "secondary" auto>
+                                    Upload Image
+                                </Button>
                             </Row>
+                            <Spacer y={0.3} />
+
                             <Row justify="center" align="center">
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                     Game Score :
                                 </Text>
                                 <Spacer y={2} />
-                                <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Game Score
-                                </Text>
+                                <Input disabled placeholder="Disabled" />
+
                             </Row>
-                            <Spacer y={2} />
 
                         </Card.Body>
                     </Card>
                     <Row css={{ mt: "$10" }} justify="center" align="center">
-                        <Button shadow color="secondary">
+                        <Button shadow color="primary">
                             Edit Profile
                         </Button>
                     </Row>

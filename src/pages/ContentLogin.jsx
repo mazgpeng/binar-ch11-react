@@ -1,14 +1,17 @@
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
+import {useNavigate} from "react-router";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
-import { useNavigate } from "react-router";
+
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
 
 
+
 export const ContentLogin = () => {
     const navigate = useNavigate()
+
     const [credential, setCredential] = useState({
         email: '',
         password: ''
@@ -21,6 +24,8 @@ export const ContentLogin = () => {
             const token = login.user.accessToken
             localStorage.setItem('token', token)
             navigate('/home')
+            navigate(0);
+
         } catch (error) {
             setError("Wrong Password/Email")
         }
@@ -34,6 +39,7 @@ export const ContentLogin = () => {
                 const token = credential.accessToken
                 localStorage.setItem('token', token)
                 navigate('/home')
+
             })
             .catch(err => {
                 setError('something wrong')

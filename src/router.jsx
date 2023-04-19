@@ -4,7 +4,9 @@ import {ContentHome} from './pages/ContentHome';
 import ContentGames from './pages/ContentGames';
 import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
-import { ContentProfile } from './pages/ContentProfile';
+import {ContentProfile } from './pages/ContentProfile';
+import {ContentProfileEdit } from './pages/ContentProfileEdit';
+
 import Navsbar from './navbar/Navsbar';
 
 const Router = createBrowserRouter([
@@ -39,6 +41,10 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <ContentProfile />
+            },
+            {
+                path: '/profile/edit',
+                element: <ContentProfileEdit />
             },
         ]
     }

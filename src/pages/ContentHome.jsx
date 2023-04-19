@@ -2,13 +2,15 @@ import React,{ useState,useEffect } from "react";
 import suit from "../img/suit.jpg";
 import Footer from "../components/Footer.js";
 import { Text, Container, Row, Button, Spacer, Card, Col } from "@nextui-org/react";
+import { getAuth} from "firebase/auth"
+import app from '../service/firebase'
 import "../pages/Home.css";
 import { useNavigate } from "react-router-dom";
 
 export function ContentHome() {
-  const [user, setUser] = useState({});
   const [isLogin, setisLogin] = useState(false)
   const navigate = useNavigate();
+  const auth = getAuth(app)
 
   useEffect(() => {
       let token = localStorage.getItem('token')
@@ -17,13 +19,26 @@ export function ContentHome() {
       }
   }, [])
 
+  const [users, setUsers] = useState();
+
+   useEffect(() => {
+        let users = auth.currentUser
+        if (users){
+             setUsers(users)
+            console.log(users.email);
+       
+        }     
+  }, []);
+
+
+
   return (
     <>
     {isLogin ?
     <div className="latar">
         <div className="container">
         <div className="container home-content rounded p-3 shadow">
-          <h4 className="home-left text-light">Hi,Welcome {user.username}</h4>
+          <h4 className="home-left text-light">Hi, Welcome  </h4>
           <p className="home-left text-light">Recomended Game For You</p>
           <div className="home-box-game mb-3 rounded border">
             <div className="p-3">
