@@ -103,7 +103,7 @@ export const ContentProfileEdit = () => {
                     </Card>
                     <Row css={{ mt: "$10" }} justify="center" align="center">
                         <Button shadow color="primary">
-                            Edit Profile
+                            Submit
                         </Button>
                     </Row>
                 </Container>

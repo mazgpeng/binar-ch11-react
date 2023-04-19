@@ -1,10 +1,12 @@
 import { Text, Container, Card, Row, Spacer,Col, Button } from "@nextui-org/react"
 import React, { useEffect, useState } from "react";
+import {useNavigate} from "react-router";
 import { getAuth } from "firebase/auth"
 import app from '../service/firebase'
 
 
 export const ContentProfile = () => {
+    const navigate = useNavigate()
     const auth = getAuth(app)
     const [users, setUsers] = useState();
     const [isLogin, setisLogin] = useState(false)
@@ -93,12 +95,11 @@ export const ContentProfile = () => {
                                     Game Score
                                 </Text>
                             </Row>
-                            <Spacer y={2} />
 
                         </Card.Body>
                     </Card>
                     <Row css={{ mt: "$10" }} justify="center" align="center">
-                        <Button shadow color="secondary">
+                        <Button onClick={() => navigate('/profile/edit')} shadow color="secondary">
                             Edit Profile
                         </Button>
                     </Row>
