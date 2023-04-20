@@ -35,6 +35,7 @@ export function ContentHome() {
       {isLogin ?
         <div className="latar">
           <div className="container">
+            <div className="formlogin">
             <div className="container home-content rounded p-3 shadow">
               <h4 className="home-left text-light">Hi, Welcome {users && <h4>{users.displayName}</h4>} </h4>
               <p className="home-left text-light">Recomended Game For You</p>
@@ -43,7 +44,9 @@ export function ContentHome() {
                   <img src={suit}></img>
                 </div>
                 <div className="p-3 text-light home-detail">
-                  <h3 className="text-white">Rock-Paper-Scissors</h3>
+                <Text h3 size={60}css={{textGradient: "45deg, $purple600 -20%, $pink600 100%",}}weight="bold"
+                    >Rock-Paper-Scissors
+                    </Text>
                   <p>Our most played game</p>
                   <p>
                     What is the concept of Rock Paper Scissors? Each gesture defeats
@@ -52,13 +55,12 @@ export function ContentHome() {
                     defeated by scissors. The person whose gesture defeats the other
                     is selected.
                   </p>
-                  <button
-                    className="home-edit-button"
-                    onClick={() => navigate("/games")}
-                  >
-                    Play Now
-                  </button>
+                  <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto onClick={() => navigate("/games")}>
+                  Play Now!
+                </Button>
+                  
                 </div>
+              </div>
               </div>
             </div>
           </div>

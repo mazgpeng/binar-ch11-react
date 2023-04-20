@@ -1,5 +1,6 @@
 .latar {
-    background-color: #fcfcfc;
+   
+    background-image: url("../img/background.jpeg");
 }
   
 .container {
@@ -9,11 +10,15 @@
 }
 
 .home-content {
-  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, rgba(39, 157, 236, 0.507), rgba(255, 0, 0, 0.712));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.formlogin{
+  padding-bottom: 160px
 }
 
 .home-left {
@@ -59,4 +64,13 @@
 .home-edit-button:hover {
   background-color: #ffffff;
   color: #000000;
+}
+
+.d-flex.justify-content-around{
+  padding-top: 83px;
+}
+
+.form-group{
+  padding-top: 100px;
+  padding-bottom: 244px;
 }
