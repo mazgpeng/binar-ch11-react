@@ -3,6 +3,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
+import { Input  } from '@nextui-org/react';
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
@@ -56,8 +57,10 @@ export const ContentLogin = () => {
     return (
     <div className="latar">
             <div className="container">
-                <div>
-                    <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
+                <div className="form-group">
+                <div className="col-4">
+                    
+                    <Input labelPlaceholder="Email" width="250px" type="text" class="form-control" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
                     <br />
                     <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
                     <br />
@@ -74,7 +77,7 @@ export const ContentLogin = () => {
                         className="btn btn-success"
                         onClick={() => navigate("/register")}
                     >Register</button>
-                   
+                </div>
                 </div>
             </div>
       <Footer />
