@@ -1,9 +1,7 @@
-import { Input, Button } from "reactstrap";
 import { useState } from "react";
 import Footer from "../components/Footer.js";
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth"
 import app from '../service/firebase'
-const provider = new GoogleAuthProvider();
 
 export const ContentRegister = () => {
     const [credential, setCredential] = useState({
