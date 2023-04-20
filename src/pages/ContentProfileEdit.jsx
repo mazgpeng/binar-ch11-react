@@ -1,11 +1,13 @@
 import { Text, Container, Card, Row, Spacer, Col, Button, Input } from "@nextui-org/react"
 import React, { useEffect, useState } from "react";
-import { getAuth,updateProfile } from "firebase/auth"
+import { getAuth, updateProfile, onAuthStateChanged } from "firebase/auth"
 import app from '../service/firebase'
+import { useNavigate } from "react-router";
 
 
 export const ContentProfileEdit = () => {
     const auth = getAuth(app)
+    const navigate = useNavigate();
     const [isLogin, setisLogin] = useState(false)
 
     useEffect(() => {
@@ -15,19 +17,38 @@ export const ContentProfileEdit = () => {
         }
     }, [])
 
-    // const [users, setUsers] = useState();
+    const [users, setUsers] = useState();
+    const [profile, setProfile] = useState({
+        name: "",
+        avatar: "",
+    })
 
-    function updatedata () {
+    useEffect(() => {
+        onAuthStateChanged(auth, (data) => {
+            setUsers(data)
+        });
+    }, [])
+
+    function updatedata() {
         updateProfile(auth.currentUser, {
-            displayName: "Raynato Fontana",
-          }).then(() => {
-            console.log('profile updated');
-          }).catch((error) => {
-            // An error occurred
-            // ...
-          });
-        };
-        
+            displayName: profile.name,
+            photoURL: profile.avatar
+
+        }).then(() => {
+            alert('profile updated');
+            navigate('/profile')
+        }).catch((error) => {
+            alert("something wrong");
+        });
+    };
+
+    function handleChangeInput(e, type) {
+        let value = e.target.value
+        let temp = { ...profile }
+        temp[type] = value
+        setProfile(temp)
+    }
+
 
 
     return (
@@ -41,7 +62,10 @@ export const ContentProfileEdit = () => {
                                     UID :
                                 </Text>
                                 <Spacer y={2} />
-                                <Input disabled placeholder="Disabled" />
+                                {users && <>
+                                    <Input readOnly placeholder="Disabled" value={users.uid} />
+                                </>}
+
                             </Row>
                             <Spacer y={0.3} />
 
@@ -50,7 +74,9 @@ export const ContentProfileEdit = () => {
                                     Email :
                                 </Text>
                                 <Spacer y={2} />
-                                <Input disabled placeholder="Disabled" />
+                                {users && <>
+                                    <Input readOnly placeholder="Disabled" value={users.email} />
+                                </>}
 
                             </Row>
                             <Spacer y={0.3} />
@@ -60,8 +86,9 @@ export const ContentProfileEdit = () => {
                                     Name :
                                 </Text>
                                 <Spacer y={2} />
-
-                                <Input placeholder="Next UI" />
+                                {users && <>
+                                    <Input placeholder="Name" clearable initialValue={users.displayName} onChange={(e) => handleChangeInput(e, 'name')} />
+                                </>}
                             </Row>
                             <Spacer y={0.3} />
 
@@ -72,9 +99,10 @@ export const ContentProfileEdit = () => {
                                     Avatar :
                                 </Text>
                                 <Spacer y={2} />
-                                <Button color="secondary" auto>
-                                    Upload Image
-                                </Button>
+                                {users && <>
+                                    <Input placeholder="Input Image Url" clearable initialValue={users.photoURL} onChange={(e) => handleChangeInput(e, 'avatar')} />
+                                </>}
+
                             </Row>
                             <Spacer y={0.3} />
 
@@ -83,7 +111,7 @@ export const ContentProfileEdit = () => {
                                     Game Score :
                                 </Text>
                                 <Spacer y={2} />
-                                <Input disabled placeholder="Disabled" />
+                                <Input readOnly />
 
                             </Row>
 

@@ -22,7 +22,6 @@ export const ContentProfile = () => {
     useEffect(() => {
         onAuthStateChanged(auth, (data) => {
           setUsers(data)
-          console.log(data);
         });
       }, [])
     
@@ -41,7 +40,6 @@ export const ContentProfile = () => {
                                 <Spacer y={2} />
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                                 {users && <p>{users.uid}</p>}
-
                                 </Text>
                             </Row>
                             <Row justify="center" align="center">
@@ -69,7 +67,7 @@ export const ContentProfile = () => {
                                 </Text>
                                 <Spacer y={2} />
                                 <Text h6 size={15} color="white" css={{ m: 0 }}>
-                                    Avatar
+                                {users && <p>{users.photoURL}</p>}
                                 </Text>
                             </Row>
                             <Row justify="center" align="center">

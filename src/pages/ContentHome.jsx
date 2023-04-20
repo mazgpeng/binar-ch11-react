@@ -25,7 +25,6 @@ export function ContentHome() {
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
       setUsers(data)
-      console.log(data);
     });
   }, [])
 
@@ -37,7 +36,7 @@ export function ContentHome() {
         <div className="latar">
           <div className="container">
             <div className="container home-content rounded p-3 shadow">
-              <h4 className="home-left text-light">Hi, Welcome {users && <p>{users.email}</p>} </h4>
+              <h4 className="home-left text-light">Hi, Welcome {users && <h4>{users.displayName}</h4>} </h4>
               <p className="home-left text-light">Recomended Game For You</p>
               <div className="home-box-game mb-3 rounded border">
                 <div className="p-3">
