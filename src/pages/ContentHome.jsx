@@ -72,7 +72,7 @@ export function ContentHome() {
                 <Card.Body>
                   <Text justify="center" align="center" h1>Please Login To View Page!</Text>
                   <Spacer y={0.5} />
-                  <Button xs css={{ mb: "$10" }} shadow bordered color="gradient" auto>
+                  <Button onClick={() => navigate('/login')} xs css={{ mb: "$10" }} shadow bordered color="gradient" auto>
                     Login
                   </Button>
                 </Card.Body>

@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Button, Text, Link, Dropdown, Avatar } from "@nextui-org/react";
+import {useNavigate} from "react-router";
+import { Navbar, Button, Text, Link,} from "@nextui-org/react";
 import { NavLink, Outlet } from "react-router-dom";
+import { getAuth, updateProfile, onAuthStateChanged,signOut } from "firebase/auth"
+import app from '../service/firebase'
 import { AcmeLogo } from "../pages/nextui/AcmeLogo"
 
 export default function Navsbar() {
+    const auth = getAuth(app)
+    const navigate = useNavigate()
     const [isLogin, setisLogin] = useState(false)
+    const [users, setUsers] = useState();
 
     useEffect(() => {
         let token = localStorage.getItem('token')
@@ -12,6 +18,28 @@ export default function Navsbar() {
             setisLogin(true)
         }
     }, [])
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (data) => {
+            setUsers(data)
+        });
+    }, [])
+
+    function signout() {
+        signOut(auth, {
+
+        }).then(() => {
+            alert('sign out success');
+            localStorage.removeItem('token')
+            navigate('/profile')
+            navigate(0)
+
+        }).catch((error) => {
+            alert("something wrong");
+        });
+    };
+
+
 
     const collapseItems = [
         "Landing Page",
@@ -38,12 +66,17 @@ export default function Navsbar() {
                     </Navbar.Content>
                     <Navbar.Content>
                         <Navbar.Item>
+                            <>
                             <Text color="purple" auto flat>
-                                Welcome Back User!
+                                Welcome &nbsp; 
                             </Text>
+                            <Text color="purple" auto flat>
+                               {users && <p>{users.displayName}</p>}
+                            </Text>
+                            </>
                         </Navbar.Item>
                         <Navbar.Item>
-                            <Button shadow color="error" auto>
+                            <Button shadow color="error" auto onPress={signout}>
                                 Log Out
                             </Button>
                         </Navbar.Item>
