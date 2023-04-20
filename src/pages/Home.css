@@ -18,7 +18,7 @@
 }
 
 .formlogin{
-  padding-bottom: 160px
+  padding-bottom: 125px
 }
 
 .home-left {
@@ -37,21 +37,21 @@
   max-width: 200px;
 }
 
-.home-detail {
+/* .home-detail {
   padding: 20px;
-}
+} */
 
-.home-detail h3 {
+/* .home-detail h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-}
+} */
 
-.home-detail p {
+/* .home-detail p {
   font-size: 1rem;
   margin-bottom: 1rem;
-}
+} */
 
-.home-edit-button {
+/* .home-edit-button {
   font-size: 1.2rem;
   padding: 10px 20px;
   background-color: #000000;
@@ -59,18 +59,23 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-}
+} */
 
-.home-edit-button:hover {
+/* .home-edit-button:hover {
   background-color: #ffffff;
   color: #000000;
-}
+} */
 
-.d-flex.justify-content-around{
+/* .d-flex.justify-content-around{
   padding-top: 83px;
-}
-
+} */
+/* login page */
 .form-group{
   padding-top: 100px;
   padding-bottom: 244px;
+}
+
+/* game list */
+.formgmlist{
+  padding-top: 22px;
 }
