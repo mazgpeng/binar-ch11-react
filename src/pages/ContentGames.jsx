@@ -1,12 +1,10 @@
 import { Text, Spacer } from "@nextui-org/react"
 import { Box } from "./nextui/Box"
 import Footer from "../components/Footer.js";
-import Navsbar from "../navbar/Navsbar.jsx";
 
 export default function ContentGames() {
   return (
     <>
-    <Navsbar/>
   <Box css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}}>
     <Text h2>Page Games</Text>
     <Text size="$lg" color="black">

@@ -1,6 +1,5 @@
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
-import Navsbar from "../navbar/Navsbar.jsx";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
 import { useNavigate } from "react-router";
@@ -50,12 +49,11 @@ export const ContentLogin = () => {
 
     return (
     <div className="latar">
-        <Navsbar />
             <div className="container">
                 <div>
                     <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
                     <br />
-                    <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
+                    <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
                     <br />
                     <button
                         className="btn btn-success"
@@ -65,6 +63,12 @@ export const ContentLogin = () => {
                         onClick={loginWithGoogle}
                     >Login With Google</button>
                     <p>{error}</p>
+                    <h3>Don't Have Account?</h3>
+                    <button
+                        className="btn btn-success"
+                        onClick={() => navigate("/register")}
+                    >Register</button>
+                   
                 </div>
             </div>
       <Footer />

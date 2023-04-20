@@ -4,13 +4,13 @@ import {ContentHome} from './pages/ContentHome';
 import ContentGames from './pages/ContentGames';
 import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
-
-
 import { ContentProfile } from './pages/ContentProfile';
+import Navsbar from './navbar/Navsbar';
 
 const Router = createBrowserRouter([
 
     {
+        element : <Navsbar/>,
         children: [
             {
                 path: '/',
