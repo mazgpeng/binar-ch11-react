@@ -35,7 +35,7 @@ export function ContentHome() {
       {isLogin ?
         <div className="latar">
           <div className="container">
-            <div className="formlogin">
+            <div className="formhome">
             <div className="container home-content rounded p-3 shadow">
               <h4 className="home-left text-light">Hi, Welcome {users && <h4>{users.displayName}</h4>} </h4>
               <p className="home-left text-light">Recomended Game For You</p>

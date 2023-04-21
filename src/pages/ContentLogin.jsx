@@ -3,7 +3,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
-import { Input  } from '@nextui-org/react';
+import { Input, Button, Grid, Text  } from '@nextui-org/react';
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
@@ -58,26 +58,27 @@ export const ContentLogin = () => {
     <div className="latar">
             <div className="container">
                 <div className="form-group">
-                <div className="col-4">
-                    
-                    <Input labelPlaceholder="Email" width="250px" type="text" class="form-control" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
-                    <br />
-                    <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
-                    <br />
-                    <button
-                        className="btn btn-success"
-                        onClick={handleLogin}
-                    >Login</button>
-                    <button
-                        onClick={loginWithGoogle}
-                    >Login With Google</button>
-                    <p>{error}</p>
-                    <h3>Don't Have Account?</h3>
-                    <button
-                        className="btn btn-success"
-                        onClick={() => navigate("/register")}
-                    >Register</button>
-                </div>
+                    <>
+                    <Text h1 size={60} css={{textGradient: "45deg, $blue600 -20%, $pink600 50%",}} weight="bold"> log in </Text>
+                        <Grid.Container gap={2}>
+                            <Grid>
+                                <Input labelPlaceholder="Email" width="250px" type="text"  value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
+                            </Grid>
+                            <Grid>
+                                <Input.Password labelPlaceholder="Password" width="250px"  value={credential.password} onChange={(e) => handleChangeInput(e, 'password')}/>
+                            </Grid>
+                            <Grid>
+                                <Button onClick={handleLogin} auto color="success" > Login </Button>
+                            </Grid>
+                            <Grid>
+                                <Button onClick={loginWithGoogle} color="secondary" auto> Login With Google </Button> 
+                            </Grid>
+                        </Grid.Container>
+                        
+                        <p>{error}</p>
+                        <h3>Don't Have Account?</h3>
+                        <Button onClick={() => navigate("/register")} auto color="success"> Register </Button>
+                        </>
                 </div>
             </div>
       <Footer />

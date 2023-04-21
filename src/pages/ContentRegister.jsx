@@ -2,6 +2,7 @@ import { useState } from "react";
 import Footer from "../components/Footer.js";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth"
 import app from '../service/firebase'
+import { Input, Button, Grid, Text  } from '@nextui-org/react';
 
 export const ContentRegister = () => {
     const [credential, setCredential] = useState({
@@ -27,17 +28,21 @@ export const ContentRegister = () => {
 
     return (
     <div className="latar">
-            <div className="container">
-            <div>
-                <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
-                <br />
-                <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
-                <br />
-                <button
-                    className="btn btn-success"
-                    onClick={handleSignUp}
-                >Sign Up</button>
-            </div>
+         <div className="container">
+            <div className="register">
+            <>
+                <Text h1 size={60} css={{textGradient: "45deg, $blue600 -20%, $pink600 50%",}} weight="bold"> Sign up</Text>
+                <Grid.Container gap={2}>
+                    <Grid>
+                        <Input labelPlaceholder="Email" width="250px" type="text"  value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
+                    </Grid>
+                    <Grid>
+                        <Input.Password labelPlaceholder="Password" width="250px"  value={credential.password} onChange={(e) => handleChangeInput(e, 'password')}/>
+                    </Grid>
+                </Grid.Container>
+                <Button onClick={handleSignUp} auto color="success"> Sign Up </Button>
+                </>
+                </div>
             </div>
         <Footer />
     </div>

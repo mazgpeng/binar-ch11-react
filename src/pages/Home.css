@@ -1,5 +1,4 @@
 .latar {
-   
     background-image: url("../img/background.jpeg");
 }
   
@@ -17,8 +16,8 @@
   justify-content: center;
 }
 
-.formlogin{
-  padding-bottom: 125px
+.formhome{
+  padding-bottom: 106px
 }
 
 .home-left {
@@ -37,45 +36,31 @@
   max-width: 200px;
 }
 
-/* .home-detail {
-  padding: 20px;
-} */
 
-/* .home-detail h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-} */
-
-/* .home-detail p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-} */
-
-/* .home-edit-button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-} */
-
-/* .home-edit-button:hover {
-  background-color: #ffffff;
-  color: #000000;
-} */
-
-/* .d-flex.justify-content-around{
-  padding-top: 83px;
-} */
 /* login page */
 .form-group{
-  padding-top: 100px;
-  padding-bottom: 244px;
+  width: 600px;
+  padding-top: 10px;
+  padding-bottom: 285px;
 }
+
+.form-group h1{
+  padding-bottom: 10px;
+}
+
+
+/* register page */
+.register{
+  padding-top: 10px;
+  padding-bottom: 407px;
+}
+.register h1{
+  padding-bottom: 10px;
+}
+
 
 /* game list */
 .formgmlist{
   padding-top: 22px;
+  padding-bottom: 10px;
 }
