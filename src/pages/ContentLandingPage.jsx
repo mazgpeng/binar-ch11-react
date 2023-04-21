@@ -2,8 +2,10 @@ import { Text, Container, Row, Button, Spacer, Card, } from "@nextui-org/react";
 import { Box } from "./nextui/Box"
 import background from '../img/background.jpeg'
 import background1 from '../img/background1.jpg'
+import { useNavigate } from "react-router-dom";
 
 export default function ContentLandingPage() {
+  const navigate = useNavigate()
   return (
     <>
       <Container xl css={{
@@ -22,8 +24,8 @@ export default function ContentLandingPage() {
             <Text size={40} > Introducing GameStation</Text>
             <Text size={30} > One Stop Platform to Cloud Gaming.</Text>
             <Spacer y={0.5} />
-            <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto>
-              Play Now!
+            <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto onClick={() => navigate("/register")}>
+              Sign Up!
             </Button>
           </Box>
         </Row>
@@ -59,7 +61,7 @@ export default function ContentLandingPage() {
                 <Text h1>Rock Paper Scissors!</Text>
                 <Text size={20} > intransitive hand game, usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. These shapes are "rock" (a closed fist), "paper" (a flat hand), and "scissors" (a fist with the index finger and middle finger extended, forming a V). The earliest form of "rock paper scissors"-style game originated in China and was subsequently imported into Japan, where it reached its modern standardized form, before being spread throughout the world in the early 20th century.</Text>
                 <Spacer y={0.5} />
-                <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto>
+                <Button css={{ mb: "$10" }} shadow bordered color="gradient" auto onClick={() => navigate("/games")}>
                   Play Now!
                 </Button>
               </Card.Body>
