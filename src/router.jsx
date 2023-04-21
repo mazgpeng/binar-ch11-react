@@ -6,6 +6,8 @@ import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
 import {ContentProfile } from './pages/ContentProfile';
 import {ContentProfileEdit } from './pages/ContentProfileEdit';
+import Board from './pages/board';
+
 
 
 import Navsbar from './navbar/Navsbar';
@@ -43,6 +45,10 @@ const Router = createBrowserRouter([
                 path: '/profile',
                 element: <ContentProfile />
             },
+            {
+                path: '/leaderboard',
+                element: <Board />
+            }
         ]
     }
 ])
