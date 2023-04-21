@@ -14,15 +14,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 30px;
 }
 
 .formhome{
-  padding-bottom: 106px
+  padding-bottom: 106px;
+  border-radius: 100px;
 }
 
 .home-left {
   font-size: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .home-box-game {
@@ -66,6 +69,29 @@
 }
 
 .card{
-  background-image: linear-gradient(to top right, rgb(39, 157, 236), rgb(176, 19, 197));
+  text-align: center;
+  background-image: linear-gradient(to top right, rgba(22, 43, 236, 0.856), rgba(224, 16, 16, 0.877));
   border-radius: 40px;
+}
+
+/* game-detail */
+.detail-page {
+  background-image: linear-gradient(to bottom, rgba(39, 157, 236, 0.507), rgba(255, 0, 0, 0.712));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  padding-top: 50px;
+  padding-bottom: 52px;
+}
+.card-body.p-4 h2 {
+  padding-bottom: 10px;
+}
+
+.game-game-bottom{
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  padding-bottom: 46px;
 }

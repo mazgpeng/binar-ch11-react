@@ -7,6 +7,7 @@ import {ContentRegister} from './pages/ContentRegister';
 import {ContentProfile } from './pages/ContentProfile';
 import {ContentProfileEdit } from './pages/ContentProfileEdit';
 import Board from './pages/board';
+import GameDetail from './pages/ContentGameDetail';
 
 
 
@@ -30,6 +31,11 @@ const Router = createBrowserRouter([
             {
                 path: '/games',
                 element: <ContentGameList />
+
+            },
+            {
+                path: '/games-detail',
+                element: <GameDetail />
 
             },
             {
