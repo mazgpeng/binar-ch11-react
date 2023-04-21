@@ -43,10 +43,6 @@ const Router = createBrowserRouter([
                 path: '/profile',
                 element: <ContentProfile />
             },
-            {
-                path: '/profile/edit',
-                element: <ContentProfileEdit />
-            },
         ]
     }
 ])
