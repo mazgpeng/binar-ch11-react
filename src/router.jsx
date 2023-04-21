@@ -1,17 +1,19 @@
 import { createBrowserRouter } from 'react-router-dom'
 import ContentLandingPage from './pages/ContentLandingPage';
 import {ContentHome} from './pages/ContentHome';
-import ContentGames from './pages/ContentGames';
+import ContentGameList from './pages/ContentGames';
 import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
-import {ContentLeaderboard} from './pages/ContentLeaderboard'
+import {ContentProfile } from './pages/ContentProfile';
+import {ContentProfileEdit } from './pages/ContentProfileEdit';
 
 
-import { ContentProfile } from './pages/ContentProfile';
+import Navsbar from './navbar/Navsbar';
 
 const Router = createBrowserRouter([
 
     {
+        element : <Navsbar/>,
         children: [
             {
                 path: '/',
@@ -25,7 +27,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/games',
-                element: <ContentGames />
+                element: <ContentGameList />
 
             },
             {
@@ -40,10 +42,6 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <ContentProfile />
-            },
-            {
-                path: '/leaderboard',
-                element: <ContentLeaderboard />
             },
         ]
     }

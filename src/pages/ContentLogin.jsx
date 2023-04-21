@@ -1,15 +1,18 @@
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
-import Navsbar from "../navbar/Navsbar.jsx";
+import {useNavigate} from "react-router";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
-import { useNavigate } from "react-router";
+import { Input  } from '@nextui-org/react';
+
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
 
 
+
 export const ContentLogin = () => {
     const navigate = useNavigate()
+
     const [credential, setCredential] = useState({
         email: '',
         password: ''
@@ -22,6 +25,8 @@ export const ContentLogin = () => {
             const token = login.user.accessToken
             localStorage.setItem('token', token)
             navigate('/home')
+            navigate(0);
+
         } catch (error) {
             setError("Wrong Password/Email")
         }
@@ -35,6 +40,7 @@ export const ContentLogin = () => {
                 const token = credential.accessToken
                 localStorage.setItem('token', token)
                 navigate('/home')
+
             })
             .catch(err => {
                 setError('something wrong')
@@ -50,12 +56,13 @@ export const ContentLogin = () => {
 
     return (
     <div className="latar">
-        <Navsbar />
             <div className="container">
-                <div>
-                    <input type="text" class="form-control" placeholder="email" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')} />
+                <div className="form-group">
+                <div className="col-4">
+                    
+                    <Input labelPlaceholder="Email" width="250px" type="text" class="form-control" value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
                     <br />
-                    <input type="text" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
+                    <input type="password" class="form-control" placeholder="password" value={credential.password} onChange={(e) => handleChangeInput(e, 'password')} />
                     <br />
                     <button
                         className="btn btn-success"
@@ -65,6 +72,12 @@ export const ContentLogin = () => {
                         onClick={loginWithGoogle}
                     >Login With Google</button>
                     <p>{error}</p>
+                    <h3>Don't Have Account?</h3>
+                    <button
+                        className="btn btn-success"
+                        onClick={() => navigate("/register")}
+                    >Register</button>
+                </div>
                 </div>
             </div>
       <Footer />
