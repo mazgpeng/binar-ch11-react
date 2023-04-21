@@ -1,7 +1,7 @@
 import {Button, Badge }from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Placeholder from 'react-bootstrap/Placeholder';
-import suit from "../img/suit.jpg";
+import suit from "../img/janken.png";
 import coming1 from "../img/games.png";
 import coming2 from "../img/games1.png";
 import Footer from "../components/Footer.js";
