@@ -34,10 +34,11 @@ export const ContentRegister = () => {
                 <Text h1 size={60} css={{textGradient: "45deg, $blue600 -20%, $pink600 50%",}} weight="bold"> Sign up</Text>
                 <Grid.Container gap={2}>
                     <Grid>
-                        <Input labelPlaceholder="Email" width="250px" type="text"  value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
+                        <Input labelPlaceholder="Your Email" width="250px" type="text"  value={credential.email} onChange={(e) => handleChangeInput(e, 'email')}/>
                     </Grid>
                     <Grid>
                         <Input.Password labelPlaceholder="Password" width="250px"  value={credential.password} onChange={(e) => handleChangeInput(e, 'password')}/>
+                        <Text color="warning" h7>Password should be 6-20 characters</Text>
                     </Grid>
                 </Grid.Container>
                 <Button onClick={handleSignUp} auto color="success"> Sign Up </Button>
