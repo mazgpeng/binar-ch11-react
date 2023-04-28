@@ -13,24 +13,41 @@ const provider = new GoogleAuthProvider();
 
 export const ContentLogin = () => {
     const navigate = useNavigate()
+    const [error, setError] = useState('')
     const [smShow, setSmShow] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const [credential, setCredential] = useState({
         email: '',
         password: ''
     })
 
-    const [error, setError] = useState('')
+    
     async function handleLogin() {
+        if (!credential.email) {
+            setError("Email is required")
+            return
+        }
+        if (!credential.password) {
+            setError("Password is required")
+            return
+        }
         try {
             const login = await signInWithEmailAndPassword(auth, credential.email, credential.password)
             const token = login.user.accessToken
             localStorage.setItem('token', token)
-            navigate('/home')
-            navigate(0);
+            setSuccess(true);
+            setError('');
+            setSmShow(true);
+            setTimeout(() => {
+                navigate('/home');
+                navigate(0);
+            }, 1500);
 
         } catch (error) {
             setError("Wrong Password/Email")
+            setSuccess(false);
+            setSmShow(true);
         }
     }
 
@@ -42,6 +59,7 @@ export const ContentLogin = () => {
                 const token = credential.accessToken
                 localStorage.setItem('token', token)
                 navigate('/home')
+
 
             })
             .catch(err => {
@@ -76,17 +94,29 @@ export const ContentLogin = () => {
                                 <Button onClick={loginWithGoogle} color="secondary" auto> Login With Google </Button> 
                             </Grid>
                         </Grid.Container>
-                        
-                        <p>{error}</p>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        {!error && success && (
+                            <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm">
+                                <Modal.Header closeButton> 
+                                    <Modal.Title id="example-modal-sizes-title-sm">
+                                        GAMESTATION
+                                    </Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>login successfully</Modal.Body>
+                            </Modal>
+                        )}
+                        {error && (
+                            <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm">
+                                <Modal.Header closeButton> 
+                                    <Modal.Title id="example-modal-sizes-title-sm">
+                                        ERROR
+                                    </Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body> {error} </Modal.Body>
+                            </Modal>
+                        )}
                         <h3>Don't Have Account?</h3>
                         <Button onClick={() => navigate("/register")} auto color="success"> Register </Button>
-                        <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm"
-                            > <Modal.Header> <Modal.Title id="example-modal-sizes-title-sm">
-                                GAMESTATION
-                            </Modal.Title>
-                        </Modal.Header>
-                        <Modal.Body>login successfully</Modal.Body>
-                        </Modal>
                         </>
                 </div>
             </div>

@@ -7,19 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 const GameDetail = () => {
     const navigate = useNavigate()
-//   const [alluser, setAllUser] = useState([]);
-
-// //   useEffect(() => {
-// //     const userGenerate = async () => {
-// //       const datas = await getAllUser();
-// //       const hasil = datas.data;
-
-// //       const sortdata = hasil.sort((a, b) => (a.skor > b.skor ? -1 : 1));
-// //       setAllUser(sortdata);
-// //     };
-
-// //     userGenerate();
-// //   }, []);
 
     return (
         <>
