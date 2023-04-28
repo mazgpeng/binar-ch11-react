@@ -157,7 +157,7 @@ export default function Navsbar() {
                     </Modal.Header>
                         <Modal.Body>Are you sure you want to sign out?</Modal.Body>
                             <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button color="secondary" onClick={handleClose}>
                             Cancel
                         </Button>
                     <Button color="error" onClick={handleClose} onPress={signout}>
