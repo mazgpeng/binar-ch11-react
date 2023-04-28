@@ -3,8 +3,12 @@ import Footer from "../components/Footer.js";
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth"
 import app from '../service/firebase'
 import { Input, Button, Grid, Text  } from '@nextui-org/react';
+import Modal from 'react-bootstrap/Modal';
 
 export const ContentRegister = () => {
+    const [smShow, setSmShow] = useState(false);
+
+
     const [credential, setCredential] = useState({
         email: '',
         password: ''
@@ -41,7 +45,14 @@ export const ContentRegister = () => {
                         <Text color="warning" h7>Password should be 6-20 characters</Text>
                     </Grid>
                 </Grid.Container>
-                <Button onClick={handleSignUp} auto color="success"> Sign Up </Button>
+                <Button onClick={() => { setSmShow(true); handleSignUp(); }} auto color="success"> Sign Up </Button>
+                    <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm"
+                        > <Modal.Header closeButton> <Modal.Title id="example-modal-sizes-title-sm">
+                            Register
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>Sign up successfully</Modal.Body>
+                        </Modal>
                 </>
                 </div>
             </div>

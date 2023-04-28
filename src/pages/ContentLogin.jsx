@@ -4,6 +4,7 @@ import {useNavigate} from "react-router";
 import Footer from "../components/Footer.js";
 import app from '../service/firebase'
 import { Input, Button, Grid, Text  } from '@nextui-org/react';
+import Modal from 'react-bootstrap/Modal';
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
@@ -12,6 +13,7 @@ const provider = new GoogleAuthProvider();
 
 export const ContentLogin = () => {
     const navigate = useNavigate()
+    const [smShow, setSmShow] = useState(false);
 
     const [credential, setCredential] = useState({
         email: '',
@@ -68,7 +70,7 @@ export const ContentLogin = () => {
                                 <Input.Password labelPlaceholder="Password" width="250px"  value={credential.password} onChange={(e) => handleChangeInput(e, 'password')}/>
                             </Grid>
                             <Grid>
-                                <Button onClick={handleLogin} auto color="success" > Login </Button>
+                                <Button onClick={() => { setSmShow(true); handleLogin(); }} auto color="success" > Login </Button>
                             </Grid>
                             <Grid>
                                 <Button onClick={loginWithGoogle} color="secondary" auto> Login With Google </Button> 
@@ -78,10 +80,17 @@ export const ContentLogin = () => {
                         <p>{error}</p>
                         <h3>Don't Have Account?</h3>
                         <Button onClick={() => navigate("/register")} auto color="success"> Register </Button>
+                        <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm"
+                            > <Modal.Header closeButton> <Modal.Title id="example-modal-sizes-title-sm">
+                                GAMESTATION
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>login successfully</Modal.Body>
+                        </Modal>
                         </>
                 </div>
             </div>
-      <Footer />
+        <Footer />
     </div>
     )
 };
