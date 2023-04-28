@@ -81,7 +81,7 @@ export const ContentLogin = () => {
                         <h3>Don't Have Account?</h3>
                         <Button onClick={() => navigate("/register")} auto color="success"> Register </Button>
                         <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm"
-                            > <Modal.Header closeButton> <Modal.Title id="example-modal-sizes-title-sm">
+                            > <Modal.Header> <Modal.Title id="example-modal-sizes-title-sm">
                                 GAMESTATION
                             </Modal.Title>
                         </Modal.Header>
