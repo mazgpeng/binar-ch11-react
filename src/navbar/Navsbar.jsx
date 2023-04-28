@@ -2,15 +2,21 @@ import React, { useEffect, useState } from "react";
 import {useNavigate} from "react-router";
 import { Navbar, Button, Text, Link,} from "@nextui-org/react";
 import { NavLink, Outlet } from "react-router-dom";
-import { getAuth, updateProfile, onAuthStateChanged,signOut } from "firebase/auth"
-import app from '../service/firebase'
-import { AcmeLogo } from "../pages/nextui/AcmeLogo"
+import { getAuth, updateProfile, onAuthStateChanged,signOut } from "firebase/auth";
+import app from '../service/firebase';
+import { AcmeLogo } from "../pages/nextui/AcmeLogo";
+import {Modal }from 'react-bootstrap';
 
 export default function Navsbar() {
     const auth = getAuth(app)
     const navigate = useNavigate()
     const [isLogin, setisLogin] = useState(false)
     const [users, setUsers] = useState();
+    
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     useEffect(() => {
         let token = localStorage.getItem('token')
@@ -29,9 +35,8 @@ export default function Navsbar() {
         signOut(auth, {
 
         }).then(() => {
-            alert('sign out success');
             localStorage.removeItem('token')
-            navigate('/profile')
+            navigate('/login')
             navigate(0)
 
         }).catch((error) => {
@@ -76,7 +81,7 @@ export default function Navsbar() {
                             </>
                         </Navbar.Item>
                         <Navbar.Item>
-                            <Button shadow color="error" auto onPress={signout}>
+                            <Button shadow color="error" auto onClick={handleShow} >
                                 Log Out
                             </Button>
                         </Navbar.Item>
@@ -146,6 +151,20 @@ export default function Navsbar() {
                 </Navbar>
             }
             <Outlet />
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Logout</Modal.Title>
+                    </Modal.Header>
+                        <Modal.Body>Are you sure you want to sign out?</Modal.Body>
+                            <Modal.Footer>
+                        <Button variant="secondary" onClick={handleClose}>
+                            Cancel
+                        </Button>
+                    <Button color="error" onClick={handleClose} onPress={signout}>
+                    Logout
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
         </>
 
