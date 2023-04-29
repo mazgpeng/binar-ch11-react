@@ -7,6 +7,10 @@ import Modal from 'react-bootstrap/Modal';
 
 export const ContentRegister = () => {
     const [smShow, setSmShow] = useState(false);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
+
+
 
 
     const [credential, setCredential] = useState({
@@ -18,8 +22,10 @@ export const ContentRegister = () => {
         try {
             const auth = getAuth(app)
             await createUserWithEmailAndPassword(auth, credential.email, credential.password)
+            setSuccess(true);
         } catch (error) {
             console.log(error)
+            setError(error.message);
         }
     }
 
@@ -45,13 +51,14 @@ export const ContentRegister = () => {
                         <Text color="warning" h7>Password should be 6-20 characters</Text>
                     </Grid>
                 </Grid.Container>
-                <Button onClick={() => { setSmShow(true); handleSignUp(); }} auto color="success"> Sign Up </Button>
-                    <Modal size="sm" show={smShow} onHide={() => setSmShow(false)} aria-labelledby="example-modal-sizes-title-sm"
+                    <Button onClick={() => { setSmShow(true); handleSignUp(); }} auto color="success"> Sign Up </Button>
+                        {error && <Text color="error">{error}</Text>}
+                        <Modal size="sm" show={success} onHide={() => setSuccess(false)} aria-labelledby="example-modal-sizes-title-sm"
                         > <Modal.Header closeButton> <Modal.Title id="example-modal-sizes-title-sm">
                             Register
                             </Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>Sign up successfully</Modal.Body>
+                        <Modal.Body>{success && 'Sign up successfully'}</Modal.Body>
                         </Modal>
                 </>
                 </div>
