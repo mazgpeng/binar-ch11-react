@@ -5,6 +5,7 @@ import Footer from "../components/Footer.js";
 import app from '../service/firebase'
 import { Input, Button, Grid, Text  } from '@nextui-org/react';
 import Modal from 'react-bootstrap/Modal';
+import GoogleButton from 'react-google-button'
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
@@ -58,7 +59,10 @@ export const ContentLogin = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken
                 localStorage.setItem('token', token)
-                navigate('/home')
+                setTimeout(() => {
+                    navigate('/home');
+                    navigate(0);
+                }, 1500);
 
 
             })
@@ -90,9 +94,9 @@ export const ContentLogin = () => {
                             <Grid>
                                 <Button onClick={() => { setSmShow(true); handleLogin(); }} auto color="success" > Login </Button>
                             </Grid>
-                            <Grid>
-                                <Button onClick={loginWithGoogle} color="secondary" auto> Login With Google </Button> 
-                            </Grid>
+                            <div className="logoogle">
+                            <GoogleButton onClick={() => { setSmShow(true); loginWithGoogle(); }} /> 
+                            </div>
                         </Grid.Container>
                         {error && <p style={{ color: 'red' }}>{error}</p>}
                         {!error && success && (
