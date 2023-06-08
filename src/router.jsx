@@ -6,6 +6,7 @@ import {ContentLogin} from './pages/ContentLogin';
 import {ContentRegister} from './pages/ContentRegister';
 import {ContentProfile } from './pages/ContentProfile';
 import {ContentProfileEdit } from './pages/ContentProfileEdit';
+import {ContentMedia} from './pages/ContentMedia';
 import Board from './pages/board';
 import GameDetail from './pages/ContentGameDetail';
 
@@ -55,6 +56,12 @@ const Router = createBrowserRouter([
                 path: '/profile/edit',
                 element: <ContentProfileEdit/>
             },
+
+            {
+                path: '/media',
+                element: <ContentMedia/>
+            },
+
             {
                 path: '/leaderboard',
                 element: <Board />
