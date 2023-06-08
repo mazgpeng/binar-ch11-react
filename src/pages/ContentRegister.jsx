@@ -38,7 +38,7 @@ export const ContentRegister = () => {
 
     return (
     <div className="latar">
-         <div className="container">
+        <div className="container">
             <div className="register">
             <>
                 <Text h1 size={60} css={{textGradient: "45deg, $blue600 -20%, $pink600 50%",}} weight="bold"> Sign up</Text>

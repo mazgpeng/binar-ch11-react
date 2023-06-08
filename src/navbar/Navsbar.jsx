@@ -68,6 +68,7 @@ export default function Navsbar() {
                         <Navbar.Link as={NavLink} to="/home"> Home </Navbar.Link>
                         <Navbar.Link as={NavLink} to="/games"> Games</Navbar.Link>
                         <Navbar.Link as={NavLink} to="/profile"> Profile</Navbar.Link>
+                        <Navbar.Link as={NavLink} to="/media"> Media </Navbar.Link>
                     </Navbar.Content>
                     <Navbar.Content>
                         <Navbar.Item>
@@ -76,7 +77,7 @@ export default function Navsbar() {
                                 Welcome &nbsp; 
                             </Text>
                             <Text color="purple" auto flat>
-                               {users && <p>{users.displayName}</p>}
+                                {users && <p>{users.displayName}</p>}
                             </Text>
                             </>
                         </Navbar.Item>

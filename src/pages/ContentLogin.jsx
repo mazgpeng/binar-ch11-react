@@ -42,7 +42,6 @@ export const ContentLogin = () => {
             setSmShow(true);
             setTimeout(() => {
                 navigate('/home');
-                navigate(0);
             }, 1500);
 
         } catch (error) {
@@ -61,7 +60,6 @@ export const ContentLogin = () => {
                 localStorage.setItem('token', token)
                 setTimeout(() => {
                     navigate('/home');
-                    navigate(0);
                 }, 1500);
 
 
