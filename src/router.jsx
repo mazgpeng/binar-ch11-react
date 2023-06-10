@@ -1,74 +1,65 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom';
 import ContentLandingPage from './pages/ContentLandingPage';
-import {ContentHome} from './pages/ContentHome';
+import { ContentHome } from './pages/ContentHome';
 import ContentGameList from './pages/ContentGames';
-import {ContentLogin} from './pages/ContentLogin';
-import {ContentRegister} from './pages/ContentRegister';
-import {ContentProfile } from './pages/ContentProfile';
-import {ContentProfileEdit } from './pages/ContentProfileEdit';
-import {ContentMedia} from './pages/ContentMedia';
+import { ContentLogin } from './pages/ContentLogin';
+import { ContentRegister } from './pages/ContentRegister';
+import { ContentProfile } from './pages/ContentProfile';
+import { ContentProfileEdit } from './pages/ContentProfileEdit';
+import { ContentMedia } from './pages/ContentMedia';
 import Board from './pages/board';
 import GameDetail from './pages/ContentGameDetail';
-
-
 
 import Navsbar from './navbar/Navsbar';
 
 const Router = createBrowserRouter([
+  {
+    element: <Navsbar />,
+    children: [
+      {
+        path: '/',
+        element: <ContentLandingPage />
+      },
+      {
+        path: '/home',
+        element: <ContentHome />
+      },
+      {
+        path: '/games',
+        element: <ContentGameList />
+      },
+      {
+        path: '/games-detail',
+        element: <GameDetail />
+      },
+      {
+        path: '/login',
+        element: <ContentLogin />
+      },
+      {
+        path: '/register',
+        element: <ContentRegister />
+      },
+      {
+        path: '/profile',
+        element: <ContentProfile />
+      },
+      {
+        path: '/profile/edit',
+        element: <ContentProfileEdit />
+      },
 
-    {
-        element : <Navsbar/>,
-        children: [
-            {
-                path: '/',
-                element: <ContentLandingPage/>
+      {
+        path: '/media',
+        element: <ContentMedia />
+      },
 
-            },
-            {
-                path: '/home',
-                element: <ContentHome />
-
-            },
-            {
-                path: '/games',
-                element: <ContentGameList />
-
-            },
-            {
-                path: '/games-detail',
-                element: <GameDetail />
-
-            },
-            {
-                path: '/login',
-                element: <ContentLogin />
-
-            },
-            {
-                path: '/register',
-                element: <ContentRegister />
-            },
-            {
-                path: '/profile',
-                element: <ContentProfile />
-            },
-            {
-                path: '/profile/edit',
-                element: <ContentProfileEdit/>
-            },
-
-            {
-                path: '/media',
-                element: <ContentMedia/>
-            },
-
-            {
-                path: '/leaderboard',
-                element: <Board />
-            }
-        ]
-    }
-])
-
+      {
+        path: '/leaderboard',
+        element: <Board />
+      }
+    ]
+  }
+]);
 
 export default Router;
