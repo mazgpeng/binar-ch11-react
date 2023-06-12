@@ -6,12 +6,11 @@ import kertas from '../img/kertas.png';
 import gunting from '../img/gunting.png';
 import refresh from '../img/refresh.png';
 import back from '../img/back.png';
-import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { Link } from 'react-router-dom';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../service/firebase';
 
 export const Janken = () => {
-  const navigate = useNavigate();
   const [users, setUsers] = useState(null);
   const auth = getAuth(app);
 

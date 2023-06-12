@@ -60,6 +60,9 @@ export const ContentLogin = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         localStorage.setItem('token', token);
+        setSuccess(true);
+        setError('');
+        setSmShow(true);
         setTimeout(() => {
           navigate('/home');
           navigate(0);
@@ -67,6 +70,8 @@ export const ContentLogin = () => {
       })
       .catch(() => {
         setError('something wrong');
+        setSuccess(false);
+        setSmShow(true);
       });
   }
 
@@ -154,6 +159,10 @@ export const ContentLogin = () => {
                 <Modal.Body> {error} </Modal.Body>
               </Modal>
             )}
+            <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+              {' '}
+              Lupa Password?{' '}
+            </Button>
             <h3>Don't Have Account?</h3>
             <Button onClick={() => navigate('/register')} auto color="success">
               {' '}

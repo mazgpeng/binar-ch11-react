@@ -28,6 +28,13 @@
   text-align: center;
 }
 
+.user-display-name {
+  font-size: xx-large;
+  font-weight: bolder;
+  font-style: italic;
+  color: rgb(85, 7, 212);
+}
+
 .home-box-game {
   display: flex;
   align-items: center;
@@ -108,4 +115,9 @@
 
 .download-container {
   padding-top: 20px;
+}
+
+/* reset password */
+.button-group {
+  padding-bottom: 70px;
 }

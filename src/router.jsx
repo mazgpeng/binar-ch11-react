@@ -7,7 +7,7 @@ import { ContentRegister } from './pages/ContentRegister';
 import { ContentProfile } from './pages/ContentProfile';
 import { ContentProfileEdit } from './pages/ContentProfileEdit';
 import { ContentMedia } from './pages/ContentMedia';
-
+import ForgotPassword from './pages/ForgotPassword';
 import GameDetail from './pages/ContentGameDetail';
 
 import Navsbar from './navbar/Navsbar';
@@ -58,6 +58,10 @@ const Router = createBrowserRouter([
       {
         path: '/game',
         element: <Janken />
+      },
+      {
+        path: '/ForgotPassword',
+        element: <ForgotPassword />
       }
     ]
   }

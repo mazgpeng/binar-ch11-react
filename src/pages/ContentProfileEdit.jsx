@@ -37,7 +37,7 @@ export const ContentProfileEdit = () => {
         alert('profile updated');
         navigate('/profile');
       })
-      .catch((error) => {
+      .catch(() => {
         alert('something wrong');
       });
   }

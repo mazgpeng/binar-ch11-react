@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import ReactPlayer from 'react-player/youtube';
 import { Button } from 'react-bootstrap';
 import { CSVLink } from 'react-csv';
@@ -14,7 +13,6 @@ const RAR_FILE_URL =
   'https://drive.google.com/file/d/1EBssmJ4vNwOBpyswecTufjkc9276WqPV/view?usp=sharing';
 
 export function ContentMedia() {
-  const navigate = useNavigate();
   const downloadFileAtURL = (url) => {
     const fileName = url.split('/').pop();
     const aTag = document.createElement('a');

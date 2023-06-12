@@ -1,5 +1,5 @@
 import { Text, Container, Row, Button, Spacer, Card, Col } from '@nextui-org/react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../components/Footer.js';
 import suit from '../img/janken.png';
@@ -8,6 +8,13 @@ import { useNavigate } from 'react-router-dom';
 const GameDetail = () => {
   const navigate = useNavigate();
   const [isLogin, setisLogin] = useState(false);
+
+  useEffect(() => {
+    let token = localStorage.getItem('token');
+    if (token) {
+      setisLogin(true);
+    }
+  }, []);
 
   return (
     <>
