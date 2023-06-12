@@ -4,8 +4,10 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import app from '../service/firebase';
 import { Input, Button, Grid, Text } from '@nextui-org/react';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 
 export const ContentRegister = () => {
+  const navigate = useNavigate();
   const [smShow, setSmShow] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
@@ -20,6 +22,7 @@ export const ContentRegister = () => {
       const auth = getAuth(app);
       await createUserWithEmailAndPassword(auth, credential.email, credential.password);
       setSuccess(true);
+      setSmShow(true);
     } catch (error) {
       console.log(error);
       setError(error.message);
@@ -67,29 +70,48 @@ export const ContentRegister = () => {
                   Password should be 6-20 characters
                 </Text>
               </Grid>
+              <Grid>
+                <Button
+                  onClick={() => {
+                    setSmShow(true);
+                    handleSignUp();
+                  }}
+                  auto
+                  color="success">
+                  {' '}
+                  Sign Up{' '}
+                </Button>
+              </Grid>
+              <Grid>
+                <Button onClick={() => navigate('/login')} auto color="success">
+                  {' '}
+                  Sudah Punya akun? Login{' '}
+                </Button>
+              </Grid>
             </Grid.Container>
-            <Button
-              onClick={() => {
-                setSmShow(true);
-                handleSignUp();
-              }}
-              auto
-              color="success">
-              {' '}
-              Sign Up{' '}
-            </Button>
+
             {error && <Text color="error">{error}</Text>}
+            <h3>Lupa password?</h3>
+            <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+              {' '}
+              Reset Password!{' '}
+            </Button>
             <Modal
               size="sm"
-              show={success}
-              onHide={() => setSuccess(false)}
+              show={smShow}
+              onHide={() => {
+                setSmShow(false);
+                setError(null);
+              }}
               aria-labelledby="example-modal-sizes-title-sm">
-              {' '}
               <Modal.Header closeButton>
-                {' '}
                 <Modal.Title id="example-modal-sizes-title-sm">Register</Modal.Title>
               </Modal.Header>
-              <Modal.Body>{success && 'Sign up successfully'}</Modal.Body>
+              <Modal.Body>
+                {success
+                  ? 'Sign up berhasil, silahkan masuk dan perbarui nama di Profil'
+                  : error && <Text color="error">{error}</Text>}
+              </Modal.Body>
             </Modal>
           </>
         </div>
