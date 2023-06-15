@@ -1,0 +1,7 @@
+imag: node:alpine
+stages: -test
+
+test:
+  stages: test
+  script: -npm install
+  only: -Development
