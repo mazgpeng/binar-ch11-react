@@ -147,7 +147,7 @@ export const Janken = () => {
         {gameFinish ? (
           <>
             <button onClick={() => resetAll()}>continue?</button>
-            <Link to="/game-list">
+            <Link to="/games-detail">
               {' '}
               <button>game over</button>{' '}
             </Link>

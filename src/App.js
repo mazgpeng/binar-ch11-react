@@ -1,26 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-import './pages/style.css';
-
+import { Routes, Route } from 'react-router-dom';
+import First from './pages/ContentLandingPage';
+import { ContentHome } from './pages/ContentHome';
+import ContentGameList from './pages/ContentGames';
+import ContentLogin from './pages/ContentLogin';
+import { ContentRegister } from './pages/ContentRegister';
+import { ContentProfile } from './pages/ContentProfile';
+import { ContentProfileEdit } from './pages/ContentProfileEdit';
+import { ContentMedia } from './pages/ContentMedia';
+import ForgotPassword from './pages/ForgotPassword';
+import GameDetail from './pages/ContentGameDetail';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navsbar from './navbar/Navsbar';
+import { Janken } from './pages/janken';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navsbar />
+      <Routes>
+        <Route path="/" element={<First />} />
+        <Route path="/home" element={<ContentHome />} />
+        <Route path="/games" element={<ContentGameList />} />
+        <Route path="/games-detail" element={<GameDetail />} />
+        <Route path="/login" element={<ContentLogin />} />
+        <Route path="/register" element={<ContentRegister />} />
+        <Route path="/profile" element={<ContentProfile />} />
+        <Route path="/profile/edit" element={<ContentProfileEdit />} />
+        <Route path="/media" element={<ContentMedia />} />
+        <Route path="/game" element={<Janken />} />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+      </Routes>
+    </>
   );
 }
 

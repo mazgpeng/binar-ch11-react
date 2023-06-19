@@ -15,7 +15,7 @@ import GoogleButton from 'react-google-button';
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export const ContentLogin = () => {
+export default function ContentLogin() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [smShow, setSmShow] = useState(false);
@@ -174,4 +174,4 @@ export const ContentLogin = () => {
       <Footer />
     </div>
   );
-};
+}

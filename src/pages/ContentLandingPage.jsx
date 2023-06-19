@@ -4,7 +4,7 @@ import background from '../img/background.jpeg';
 import background1 from '../img/background1.jpg';
 import { useNavigate } from 'react-router-dom';
 
-export default function ContentLandingPage() {
+function First() {
   const navigate = useNavigate();
   return (
     <>
@@ -150,3 +150,5 @@ export default function ContentLandingPage() {
     </>
   );
 }
+
+export default First;
