@@ -6,7 +6,6 @@ import {
 } from 'firebase/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import Footer from '../components/Footer.js';
 import app from '../service/firebase';
 import { Input, Button, Grid, Text } from '@nextui-org/react';
 import Modal from 'react-bootstrap/Modal';
@@ -171,7 +170,6 @@ export default function ContentLogin() {
           </>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import suit from '../img/janken.png';
 import coming1 from '../img/games.png';
 import coming2 from '../img/games1.png';
-import Footer from '../components/Footer.js';
 import { useNavigate } from 'react-router-dom';
 
 export default function ContentGameList() {
@@ -58,7 +57,6 @@ export default function ContentGameList() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

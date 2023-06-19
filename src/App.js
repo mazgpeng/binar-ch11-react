@@ -12,6 +12,7 @@ import GameDetail from './pages/ContentGameDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navsbar from './navbar/Navsbar';
 import { Janken } from './pages/janken';
+import Footer from '../src/components/Footer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/game" element={<Janken />} />
         <Route path="/ForgotPassword" element={<ForgotPassword />} />
       </Routes>
+      <Footer />
     </>
   );
 }

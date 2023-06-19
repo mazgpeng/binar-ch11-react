@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import suit from '../img/suit.jpg';
-import Footer from '../components/Footer.js';
 import { Text, Container, Row, Button, Spacer, Card, Col } from '@nextui-org/react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../service/firebase';
@@ -70,7 +69,6 @@ export function ContentHome() {
               </div>
             </div>
           </div>
-          <Footer />
         </div>
       ) : (
         <Container xs css={{ mt: '$40' }}>

@@ -1,7 +1,6 @@
 import { Text, Container, Row, Button, Spacer, Card, Col } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from '../components/Footer.js';
 import suit from '../img/janken.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -72,7 +71,6 @@ const GameDetail = () => {
               </div>
             </div>
           </div>
-          <Footer />
         </div>
       ) : (
         <Container xs css={{ mt: '$40' }}>

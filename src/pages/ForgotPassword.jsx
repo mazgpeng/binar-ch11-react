@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import app from '../service/firebase';
 import { sendPasswordResetEmail, getAuth } from 'firebase/auth';
 import { Input, Button, Grid, Text } from '@nextui-org/react';
-import Footer from '../components/Footer.js';
 import '../pages/Home.css';
 
 export default function ForgotPassword() {
@@ -71,7 +70,6 @@ export default function ForgotPassword() {
           </>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Footer from '../components/Footer.js';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import app from '../service/firebase';
 import { Input, Button, Grid, Text } from '@nextui-org/react';
@@ -116,7 +115,6 @@ export const ContentRegister = () => {
           </>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
