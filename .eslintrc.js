@@ -19,7 +19,7 @@ module.exports = {
         endOfLine: 'auto'
       }
     ],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     'react/no-unescaped-entities': 0
   }
 };
