@@ -99,7 +99,6 @@ export default function ContentLogin() {
                 <Input
                   labelPlaceholder="Email"
                   width="250px"
-                  type="text"
                   value={credential.email}
                   onChange={(e) => handleChangeInput(e, 'email')}
                 />

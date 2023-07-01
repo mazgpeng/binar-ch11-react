@@ -53,7 +53,6 @@ export const ContentRegister = () => {
                 <Input
                   labelPlaceholder="Your Email"
                   width="250px"
-                  type="text"
                   value={credential.email}
                   onChange={(e) => handleChangeInput(e, 'email')}
                 />
