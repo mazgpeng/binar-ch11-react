@@ -31,8 +31,6 @@ export function ContentMedia() {
             <ReactPlayer
               className="react-player"
               url="https://youtu.be/NmxFxBiCrL4"
-              width="640px"
-              height="360px"
               controls={true}
             />
           </div>

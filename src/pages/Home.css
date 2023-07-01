@@ -6,14 +6,16 @@
 }
 
 @media (max-width: 768px) {
-  /* .latar {
-    background-size: cover;
+  img {
+    max-width: 50%;
   }
-  .home-content {
-    font-size: 16px;
-    background-size: cover;
-  } */
+  .react-player {
+    width: 50%;
+  }
 
+  .latar {
+    height: 100%;
+  }
   .form-group {
     background-size: cover;
     width: 50%;
@@ -21,23 +23,22 @@
   }
 
   .formgmlist {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .p-4 {
     font-size: 16px;
-    height: 100vh;
-    width: 200px;
-    height: 200px;
+    width: 100%;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .card {
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
   }
 }
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 93.3px;
 }
 
 .home-content {
@@ -101,10 +102,14 @@
 .formgmlist {
   padding-top: 22px;
   padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
   text-align: center;
+  color: white;
   background-image: linear-gradient(
     to top right,
     rgba(22, 43, 236, 0.856),
@@ -137,12 +142,7 @@
 
 /* content media */
 .media {
-  align-items: center;
   padding-bottom: 100px;
-}
-
-.download {
-  padding-bottom: 90px;
 }
 
 .download-container {
@@ -152,4 +152,9 @@
 /* reset password */
 .button-group {
   padding-bottom: 70px;
+}
+
+.backicon {
+  width: 100px;
+  height: 100px;
 }

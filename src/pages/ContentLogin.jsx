@@ -43,7 +43,7 @@ export default function ContentLogin() {
       setSmShow(true);
       setTimeout(() => {
         navigate('/home');
-        navigate(0);
+        window.location.reload();
       }, 1500);
     } catch (error) {
       setError('Wrong Password/Email');
@@ -64,7 +64,7 @@ export default function ContentLogin() {
         setSmShow(true);
         setTimeout(() => {
           navigate('/home');
-          navigate(0);
+          window.location.reload();
         }, 1500);
       })
       .catch(() => {

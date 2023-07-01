@@ -140,7 +140,9 @@ export const Janken = () => {
   return (
     <div className={styles.gameScreen}>
       <header id={styles.header} className="game-container">
-        <img id={styles.backIcon} src={back} alt="back-icon" />
+        <Link to="/home" className="backicon">
+          <img src={back} alt="back-icon" />
+        </Link>
         <h1>ROCK PAPER SCISSORS</h1>
       </header>
       <main className="game-container">

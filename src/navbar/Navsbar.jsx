@@ -43,7 +43,7 @@ export default function Navsbar() {
       });
   }
 
-  const collapseItems = ['Landing Page', 'Home', 'Games'];
+  const collapseItems = ['Home', 'Games', 'Profile'];
   return (
     <>
       {isLogin ? (
@@ -62,7 +62,7 @@ export default function Navsbar() {
             enableCursorHighlight
             hideIn="xs"
             variant="highlight-solid-rounded"
-            activeColor="secondary">
+            activeColor="primary">
             <Navbar.Link as={NavLink} to="/home">
               {' '}
               Home{' '}
@@ -102,6 +102,7 @@ export default function Navsbar() {
             {collapseItems.map((item) => (
               <Navbar.CollapseItem key={item}>
                 <Link
+                  to={`/${item.toLowerCase()}`} // Example: '/about', '/contact', '/faq'
                   as={NavLink}
                   color="inherit"
                   css={{
@@ -155,6 +156,7 @@ export default function Navsbar() {
             {collapseItems.map((item) => (
               <Navbar.CollapseItem key={item}>
                 <Link
+                  to={`/${item.toLowerCase()}`}
                   as={NavLink}
                   color="inherit"
                   css={{
