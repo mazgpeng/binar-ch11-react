@@ -28,12 +28,20 @@
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: -10px;
+    row-gap: 5px;
   }
 
   .card {
     align-items: center;
+  }
+
+  .detail-page {
     width: 100%;
-    margin-bottom: 5px;
+  }
+
+  .row {
+    width: 100%;
   }
 }
 .container {
