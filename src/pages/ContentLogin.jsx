@@ -135,7 +135,6 @@ export default function ContentLogin() {
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {!error && success && (
               <Modal
-                size="sm"
                 show={smShow}
                 onHide={() => setSmShow(false)}
                 aria-labelledby="example-modal-sizes-title-sm">
@@ -147,7 +146,6 @@ export default function ContentLogin() {
             )}
             {error && (
               <Modal
-                size="sm"
                 show={smShow}
                 onHide={() => setSmShow(false)}
                 aria-labelledby="example-modal-sizes-title-sm">
@@ -166,11 +164,11 @@ export default function ContentLogin() {
               Don't Have Account?{' '}
             </Text>
             <div className="lupa-akun">
-              <Button onClick={() => navigate('/register')} auto color="success">
+              <Button onClick={() => navigate('/register')} auto color="primary">
                 {' '}
                 Register{' '}
               </Button>
-              <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+              <Button onClick={() => navigate('/ForgotPassword')} auto color="warning">
                 {' '}
                 Lupa Password?{' '}
               </Button>

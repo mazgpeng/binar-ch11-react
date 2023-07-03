@@ -81,7 +81,7 @@ export const ContentRegister = () => {
                 </Button>
               </Grid>
               <Grid>
-                <Button onClick={() => navigate('/login')} auto color="success">
+                <Button onClick={() => navigate('/login')} auto color="primary">
                   {' '}
                   Sudah Punya akun? Login{' '}
                 </Button>
@@ -90,11 +90,7 @@ export const ContentRegister = () => {
 
             {error && <Text color="error">{error}</Text>}
             <div className="resetButton">
-              <Text
-                h1
-                size={25}
-                css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
-                weight="bold">
+              <Text h1 size={25} color="error" weight="bold">
                 {' '}
                 Lupa password?
               </Text>
@@ -104,7 +100,6 @@ export const ContentRegister = () => {
               </Button>
             </div>
             <Modal
-              size="sm"
               show={smShow}
               onHide={() => {
                 setSmShow(false);
@@ -116,8 +111,11 @@ export const ContentRegister = () => {
               </Modal.Header>
               <Modal.Body>
                 {success
-                  ? 'Sign up berhasil, silahkan masuk dan perbarui nama di Profil'
+                  ? 'Sign up Berhasil, silahkan masuk untuk melengkapi nama Anda di Profile!...'
                   : error && <Text color="error">{error}</Text>}
+                <Button variant="primary" onClick={() => navigate('/login')}>
+                  Login
+                </Button>{' '}
               </Modal.Body>
             </Modal>
           </>

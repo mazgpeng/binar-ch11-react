@@ -198,3 +198,16 @@
   width: 100px;
   height: 100px;
 }
+
+/* profile */
+.profile {
+  width: 100%;
+  height: 800px;
+  background-color: #535151;
+}
+
+.profile-edit {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

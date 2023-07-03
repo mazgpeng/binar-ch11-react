@@ -60,9 +60,16 @@ export default function ForgotPassword() {
                 </Grid>
               </form>
             </Grid.Container>
-            <h3>Belum punya akun?</h3>
+            <Text
+              h1
+              size={25}
+              css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
+              weight="">
+              {' '}
+              Don't Have Account?{' '}
+            </Text>
             <div className="button-group">
-              <Button onClick={() => navigate('/register')} auto color="success">
+              <Button onClick={() => navigate('/register')} auto color="primary">
                 {' '}
                 Register{' '}
               </Button>

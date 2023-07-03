@@ -1,14 +1,13 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDq8qRk4ZJGlKrNNQSmTpVlZF9EssaSeMc',
-  authDomain: 'binar-platinum-chapter-9.firebaseapp.com',
-  projectId: 'binar-platinum-chapter-9',
-  storageBucket: 'binar-platinum-chapter-9.appspot.com',
-  messagingSenderId: '529729182379',
-  appId: '1:529729182379:web:ab44ce02981288185ef5ee',
-  measurementId: 'G-JBL81QH3KX',
-  databaseURL: 'https://binar-platinum-chapter-9-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  apiKey: 'AIzaSyAIriMYivyprUKBuH8cznD-KhjOu0tsZJg',
+  authDomain: 'react-projectdev.firebaseapp.com',
+  projectId: 'react-projectdev',
+  storageBucket: 'react-projectdev.appspot.com',
+  messagingSenderId: '9665166090',
+  appId: '1:9665166090:web:bbcac6b0adf906f4a498f3',
+  measurementId: 'G-N24K6Y80YF'
 };
 
 const app = initializeApp(firebaseConfig);

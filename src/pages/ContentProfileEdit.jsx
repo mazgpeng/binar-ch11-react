@@ -52,36 +52,36 @@ export const ContentProfileEdit = () => {
   return (
     <>
       {isLogin ? (
-        <Container xl>
-          <Card css={{ $$cardColor: 'gray' }}>
+        <Container xl className="profile">
+          <Card className="profile-edit" css={{ $$cardColor: 'gray' }}>
             <Card.Body>
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   UID :
                 </Text>
                 <Spacer y={2} />
                 {users && (
                   <>
-                    <Input readOnly placeholder="Disabled" value={users.uid} />
+                    <Input disabled status="warning" value={users.uid} />
                   </>
                 )}
               </Row>
               <Spacer y={0.3} />
 
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Email :
                 </Text>
                 <Spacer y={2} />
                 {users && (
                   <>
-                    <Input readOnly placeholder="Disabled" value={users.email} />
+                    <Input readOnly status="warning" value={users.email} />
                   </>
                 )}
               </Row>
               <Spacer y={0.3} />
 
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Name :
                 </Text>
@@ -89,7 +89,8 @@ export const ContentProfileEdit = () => {
                 {users && (
                   <>
                     <Input
-                      placeholder="Name"
+                      status="success"
+                      placeholder="Update Name"
                       clearable
                       initialValue={users.displayName}
                       onChange={(e) => handleChangeInput(e, 'name')}
@@ -99,7 +100,7 @@ export const ContentProfileEdit = () => {
               </Row>
               <Spacer y={0.3} />
 
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Avatar :
                 </Text>
@@ -107,6 +108,7 @@ export const ContentProfileEdit = () => {
                 {users && (
                   <>
                     <Input
+                      status="success"
                       placeholder="Input Image Url"
                       clearable
                       initialValue={users.photoURL}
@@ -117,12 +119,12 @@ export const ContentProfileEdit = () => {
               </Row>
               <Spacer y={0.3} />
 
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Game Score :
                 </Text>
                 <Spacer y={2} />
-                <Input readOnly />
+                <Input disabled status="error" />
               </Row>
             </Card.Body>
           </Card>
@@ -133,7 +135,7 @@ export const ContentProfileEdit = () => {
           </Row>
         </Container>
       ) : (
-        <Container xs css={{ mt: '$40' }}>
+        <Container xs css={{ mt: '40px', height: '81vh' }}>
           <Row justify="center" align="center">
             <Col justify="center" align="center">
               <Card css={{ $$cardColor: 'white' }}>

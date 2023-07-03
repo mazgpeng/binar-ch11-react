@@ -27,10 +27,10 @@ export const ContentProfile = () => {
   return (
     <>
       {isLogin ? (
-        <Container xl>
-          <Card css={{ $$cardColor: 'gray' }}>
-            <Card.Body>
-              <Row justify="center" align="center">
+        <Container xl className="profile">
+          <Card className="profile-edit" css={{ $$cardColor: 'gray' }}>
+            <Card.Body className="profile-body">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   UID :
                 </Text>
@@ -39,7 +39,7 @@ export const ContentProfile = () => {
                   {users && <p>{users.uid}</p>}
                 </Text>
               </Row>
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Email :
                 </Text>
@@ -48,7 +48,7 @@ export const ContentProfile = () => {
                   {users && <p>{users.email}</p>}
                 </Text>
               </Row>
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Name :
                 </Text>
@@ -58,7 +58,7 @@ export const ContentProfile = () => {
                 </Text>
               </Row>
 
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Avatar :
                 </Text>
@@ -67,7 +67,7 @@ export const ContentProfile = () => {
                   {users && <p>{users.photoURL}</p>}
                 </Text>
               </Row>
-              <Row justify="center" align="center">
+              <Row align="center">
                 <Text h6 size={15} color="white" css={{ m: 0 }}>
                   Game Score :
                 </Text>
@@ -85,7 +85,7 @@ export const ContentProfile = () => {
           </Row>
         </Container>
       ) : (
-        <Container xs css={{ mt: '40px', height: '81vh', paddingTop: '200px' }}>
+        <Container xs css={{ mt: '40px', height: '81vh' }}>
           <Row justify="center" align="center">
             <Col justify="center" align="center">
               <Card css={{ $$cardColor: 'white' }}>
