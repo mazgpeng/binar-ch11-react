@@ -89,11 +89,20 @@ export const ContentRegister = () => {
             </Grid.Container>
 
             {error && <Text color="error">{error}</Text>}
-            <h3>Lupa password?</h3>
-            <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
-              {' '}
-              Reset Password!{' '}
-            </Button>
+            <div className="resetButton">
+              <Text
+                h1
+                size={25}
+                css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
+                weight="bold">
+                {' '}
+                Lupa password?
+              </Text>
+              <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+                {' '}
+                Reset Password!{' '}
+              </Button>
+            </div>
             <Modal
               size="sm"
               show={smShow}

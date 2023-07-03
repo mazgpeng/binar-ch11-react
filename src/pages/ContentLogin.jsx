@@ -97,7 +97,8 @@ export default function ContentLogin() {
             <Grid.Container gap={2}>
               <Grid>
                 <Input
-                  labelPlaceholder="Email"
+                  label="Email"
+                  placeholder="Your email address"
                   width="250px"
                   value={credential.email}
                   onChange={(e) => handleChangeInput(e, 'email')}
@@ -105,7 +106,8 @@ export default function ContentLogin() {
               </Grid>
               <Grid>
                 <Input.Password
-                  labelPlaceholder="Password"
+                  label="Password"
+                  placeholder="Your password"
                   width="250px"
                   value={credential.password}
                   onChange={(e) => handleChangeInput(e, 'password')}
@@ -157,15 +159,24 @@ export default function ContentLogin() {
                 <Modal.Body> {error} </Modal.Body>
               </Modal>
             )}
-            <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+            <Text
+              h1
+              size={25}
+              css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
+              weight="">
               {' '}
-              Lupa Password?{' '}
-            </Button>
-            <h3>Don't Have Account?</h3>
-            <Button onClick={() => navigate('/register')} auto color="success">
-              {' '}
-              Register{' '}
-            </Button>
+              Don't Have Account?{' '}
+            </Text>
+            <div className="lupa-akun">
+              <Button onClick={() => navigate('/register')} auto color="success">
+                {' '}
+                Register{' '}
+              </Button>
+              <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+                {' '}
+                Lupa Password?{' '}
+              </Button>
+            </div>
           </>
         </div>
       </div>

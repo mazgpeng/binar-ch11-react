@@ -10,9 +10,11 @@ export default function ContentGameList() {
   return (
     <div className="latar">
       <div className="container">
-        <h1>
-          Game List <Badge bg="info">BARU</Badge>{' '}
-        </h1>
+        <div className="text-h1">
+          <h1>
+            Game List <Badge bg="info">BARU</Badge>{' '}
+          </h1>
+        </div>
         <div className="formgmlist">
           <Card style={{ width: '15rem' }}>
             <Card.Img variant="top" src={suit} />

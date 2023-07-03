@@ -72,7 +72,7 @@ const GameDetail = () => {
           </div>
         </div>
       ) : (
-        <Container xs css={{ mt: '$40' }}>
+        <Container xs css={{ mt: '40px', height: '81vh', paddingTop: '200px' }}>
           <Row justify="center" align="center">
             <Col justify="center" align="center">
               <Card css={{ $$cardColor: 'white' }}>

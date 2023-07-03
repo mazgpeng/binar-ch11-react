@@ -1,10 +1,24 @@
 import { Text, Container, Row, Button, Spacer, Card } from '@nextui-org/react';
 import { Box } from './nextui/Box';
+import React, { useState, useEffect } from 'react';
 import background from '../img/background.jpeg';
 import background1 from '../img/background1.jpg';
 import { useNavigate } from 'react-router-dom';
 
 function First() {
+  const [isLogin, setisLogin] = useState(false);
+  const handleButtonClick = () => {
+    if (!isLogin) {
+      // Perform navigation logic here
+      navigate('/register');
+    }
+  };
+  useEffect(() => {
+    let token = localStorage.getItem('token');
+    if (token) {
+      setisLogin(true);
+    }
+  }, []);
   const navigate = useNavigate();
   return (
     <>
@@ -37,7 +51,8 @@ function First() {
               bordered
               color="gradient"
               auto
-              onClick={() => navigate('/register')}>
+              onClick={handleButtonClick}
+              disabled={isLogin}>
               Sign Up!
             </Button>
           </Box>
