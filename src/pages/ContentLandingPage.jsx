@@ -151,10 +151,10 @@ function First() {
           height: '1000'
         }}>
         <Row justify="center" align="center">
-          <Box css={{ px: '$12', mt: '$20', mb: '$20', '@xsMax': { px: '$10' } }}>
+          <Box css={{ px: '$10', mt: '$20', mb: '$20', '@xsMax': { px: '$10' }, width: '400px' }}>
             <Card css={{ $$cardColor: 'black' }}>
               <Card.Body>
-                <Text h6 size={30} color="white" css={{ m: 0 }}>
+                <Text h6 size={20} color="white" css={{ m: 0 }}>
                   Email : GameStation@game.station.com
                 </Text>
               </Card.Body>

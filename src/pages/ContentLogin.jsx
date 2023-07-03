@@ -97,8 +97,7 @@ export default function ContentLogin() {
             <Grid.Container gap={2}>
               <Grid>
                 <Input
-                  label="Email"
-                  placeholder="Your email address"
+                  labelPlaceholder="Email"
                   width="250px"
                   value={credential.email}
                   onChange={(e) => handleChangeInput(e, 'email')}
@@ -106,8 +105,7 @@ export default function ContentLogin() {
               </Grid>
               <Grid>
                 <Input.Password
-                  label="Password"
-                  placeholder="Your password"
+                  labelPlaceholder="Password"
                   width="250px"
                   value={credential.password}
                   onChange={(e) => handleChangeInput(e, 'password')}

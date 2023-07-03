@@ -43,9 +43,21 @@
   .row {
     width: 100%;
   }
+
+  .form-group {
+    padding-bottom: 700px;
+  }
+
+  .register {
+    padding-bottom: 700px;
+  }
+
+  /* end responsive */
 }
+
 .container {
   max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
 }
 
