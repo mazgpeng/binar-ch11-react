@@ -155,11 +155,7 @@ export default function ContentLogin() {
                 <Modal.Body> {error} </Modal.Body>
               </Modal>
             )}
-            <Text
-              h1
-              size={25}
-              css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
-              weight="">
+            <Text h1 size={20} css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}>
               {' '}
               Don’t have an account?{' '}
             </Text>

@@ -88,11 +88,7 @@ export const ContentRegister = () => {
             </div>
             {error && <Text color="error">{error}</Text>}
             <div className="resetButton">
-              <Text
-                h1
-                size={20}
-                css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
-                weight="">
+              <Text h1 size={15} css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}>
                 {' '}
                 Forgot your password?{' '}
               </Text>
