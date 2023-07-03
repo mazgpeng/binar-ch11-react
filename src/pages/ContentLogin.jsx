@@ -161,7 +161,7 @@ export default function ContentLogin() {
               css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
               weight="">
               {' '}
-              Don't Have Account?{' '}
+              Don’t have an account?{' '}
             </Text>
             <div className="lupa-akun">
               <Button onClick={() => navigate('/register')} auto color="primary">
@@ -170,7 +170,7 @@ export default function ContentLogin() {
               </Button>
               <Button onClick={() => navigate('/ForgotPassword')} auto color="warning">
                 {' '}
-                Lupa Password?{' '}
+                Reset Password!{' '}
               </Button>
             </div>
           </>

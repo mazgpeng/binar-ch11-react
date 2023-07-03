@@ -64,37 +64,39 @@ export const ContentRegister = () => {
                   value={credential.password}
                   onChange={(e) => handleChangeInput(e, 'password')}
                 />
-                <Text color="warning" h7>
+                <Text color="warning" p>
                   Password should be 6-20 characters
                 </Text>
               </Grid>
-              <Grid>
-                <Button
-                  onClick={() => {
-                    setSmShow(true);
-                    handleSignUp();
-                  }}
-                  auto
-                  color="success">
-                  {' '}
-                  Sign Up{' '}
-                </Button>
-              </Grid>
-              <Grid>
-                <Button onClick={() => navigate('/login')} auto color="primary">
-                  {' '}
-                  Sudah Punya akun? Login{' '}
-                </Button>
-              </Grid>
             </Grid.Container>
+            <div className="register-login">
+              <Button
+                onClick={() => {
+                  setSmShow(true);
+                  handleSignUp();
+                }}
+                auto
+                color="success">
+                {' '}
+                Create Account{' '}
+              </Button>
 
+              <Button onClick={() => navigate('/login')} auto color="primary">
+                {' '}
+                Login{' '}
+              </Button>
+            </div>
             {error && <Text color="error">{error}</Text>}
             <div className="resetButton">
-              <Text h1 size={25} color="error" weight="bold">
+              <Text
+                h1
+                size={20}
+                css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}
+                weight="">
                 {' '}
-                Lupa password?
+                Forgot your password?{' '}
               </Text>
-              <Button onClick={() => navigate('/ForgotPassword')} auto color="success">
+              <Button onClick={() => navigate('/ForgotPassword')} auto color="warning">
                 {' '}
                 Reset Password!{' '}
               </Button>
