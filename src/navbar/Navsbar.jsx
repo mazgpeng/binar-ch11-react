@@ -63,7 +63,8 @@ export default function Navsbar() {
             hideIn="xs"
             variant="highlight"
             activeColor="primary">
-            <Navbar.Link as={NavLink} href="/home">
+            <Navbar.Link as={NavLink} to="/home">
+              {' '}
               Home
             </Navbar.Link>
             <Navbar.Link as={NavLink} to="/games">
