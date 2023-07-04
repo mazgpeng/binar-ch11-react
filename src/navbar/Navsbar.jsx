@@ -49,7 +49,7 @@ export default function Navsbar() {
       {isLogin ? (
         <Navbar isBordered variant="sticky" css={{ backgroundColor: 'white' }} height="70px">
           <Navbar.Brand>
-            <Navbar.Toggle showIn="xs" />
+            <Navbar.Toggle showIn="xs" aria-label="toggle navigation" />
             <AcmeLogo />
             <Text b color="inherit" hideIn="xs">
               <Link css={{ color: 'gray' }} to="/" as={NavLink}>
@@ -117,7 +117,7 @@ export default function Navsbar() {
       ) : (
         <Navbar isBordered variant="sticky" css={{ backgroundColor: 'white' }} height="70px">
           <Navbar.Brand>
-            <Navbar.Toggle showIn="xs" />
+            <Navbar.Toggle showIn="xs" aria-label="toggle navigation" />
             <AcmeLogo />
             <Text b color="inherit" hideIn="xs">
               <Link css={{ color: 'gray' }} to="/" as={NavLink}>
