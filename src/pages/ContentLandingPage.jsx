@@ -106,7 +106,7 @@ function First() {
                 </Text>
                 <Spacer y={0.5} />
                 <Button
-                  css={{ mb: '$10' }}
+                  css={{ mb: '$10', width: '150px' }}
                   shadow
                   bordered
                   color="gradient"

@@ -47,9 +47,9 @@ export default function Navsbar() {
   return (
     <>
       {isLogin ? (
-        <Navbar isBordered variant="sticky" css={{ color: 'gray' }} height="80px">
+        <Navbar isBordered variant="sticky" css={{ backgroundColor: 'white' }} height="70px">
           <Navbar.Brand>
-            <Navbar.Toggle showIn="xs" aria-label="toggle navigation" />
+            <Navbar.Toggle showIn="xs" />
             <AcmeLogo />
             <Text b color="inherit" hideIn="xs">
               <Link css={{ color: 'gray' }} to="/" as={NavLink}>
@@ -61,11 +61,10 @@ export default function Navsbar() {
           <Navbar.Content
             enableCursorHighlight
             hideIn="xs"
-            variant="highlight-solid-rounded"
+            variant="highlight"
             activeColor="primary">
-            <Navbar.Link as={NavLink} to="/home">
-              {' '}
-              Home{' '}
+            <Navbar.Link as={NavLink} href="/home">
+              Home
             </Navbar.Link>
             <Navbar.Link as={NavLink} to="/games">
               {' '}
@@ -116,9 +115,9 @@ export default function Navsbar() {
           </Navbar.Collapse>
         </Navbar>
       ) : (
-        <Navbar isBordered variant="sticky" css={{ color: 'gray' }} height="80px">
+        <Navbar isBordered variant="sticky" css={{ backgroundColor: 'white' }} height="70px">
           <Navbar.Brand>
-            <Navbar.Toggle showIn="xs" aria-label="toggle navigation" />
+            <Navbar.Toggle showIn="xs" />
             <AcmeLogo />
             <Text b color="inherit" hideIn="xs">
               <Link css={{ color: 'gray' }} to="/" as={NavLink}>
@@ -130,8 +129,8 @@ export default function Navsbar() {
           <Navbar.Content
             enableCursorHighlight
             hideIn="xs"
-            variant="highlight-solid-rounded"
-            activeColor="secondary">
+            variant="highlight"
+            activeColor="primary">
             <Navbar.Link as={NavLink} to="/home">
               {' '}
               Home{' '}
