@@ -145,7 +145,13 @@ export default function Navsbar() {
               Login
             </Navbar.Link>
             <Navbar.Item>
-              <Button color="secondary" auto flat as={NavLink} to="/register">
+              <Button
+                color="secondary"
+                auto
+                flat
+                as={NavLink}
+                to="/register"
+                style={{ textDecoration: 'none' }}>
                 Sign Up
               </Button>
             </Navbar.Item>
